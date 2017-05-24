@@ -8,7 +8,7 @@
     "url": "https://github.com/lsbyerley/wright-tool.git"
   },
   "scripts": {
-    "start": "gulp build-dev",
+    "start": "gulp build-dev"
   },
   "inspiration": {
     "server-build": "https://github.com/cosmicjs/cosmicapp-voting-app",
