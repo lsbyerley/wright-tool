@@ -2,17 +2,15 @@
   "name": "wright-tool",
   "version": "1.0.0",
   "description": "Website for Wright Tool Inc.",
-  "main": "app.js",
-  "scripts": {
-    "start": "npm run concat-js; npm run uglifyjs; npm run less; npm run concat-css; npm run minify-css; NODE_ENV=production node app.js",
-    "development": "NODE_ENV=development PORT=5000 NODE_ENV=development nodemon app.js -e js,html",
-    "concat-js": "rm -f public/js/combined.js; rm -f public/js/combined.min.js; concat-cli -f public/js/* -o public/js/combined.js",
-    "uglifyjs": "touch public/js/combined.min.js; uglifyjs public/js/combined.js -o public/js/combined.min.js",
-    "less": "lessc public/less/main.less public/css/main.css",
-    "concat-css": "concat-cli -f public/css/font-awesome.min.css public/css/css-helpers.min.css public/css/main.css -o public/css/combined.css",
-    "minify-css": "touch public/css/combined.min.css; cleancss -o public/css/combined.min.css public/css/combined.css"
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lsbyerley/wright-tool.git"
   },
-  "inspriation": {
+  "scripts": {
+    "start": "gulp build-dev",
+  },
+  "inspiration": {
     "server-build": "https://github.com/cosmicjs/cosmicapp-voting-app",
     "machinery-search": "https://themeforest.net/category/wordpress?utf8=%E2%9C%93&term=machinery&as=1&type=p&referrer=search&view=grid&sort=sales",
     "content-on-page": "http://preview.themeforest.net/item/wp-industry-industrial-engineering-wp-theme/full_screen_preview/12268542"
