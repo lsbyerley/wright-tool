@@ -1,0 +1,22 @@
+@import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
+
+//BULMA CSS FRAMEWORK
+@import '../../node_modules/bulma/sass/utilities/initial-variables';
+
+//SET CUSTOM BULMA VARIABLES AS NEEDED
+$primary: $black;
+$family-serif: Montserrat;
+$family-primary: $family-serif;
+
+//IMPORT REST OF BULMA
+@import '../../node_modules/bulma/bulma';
+//@import '../../node_modules/bulma/sass/utilities/all';
+//@import '../../node_modules/bulma/sass/base/all';
+//@import '../../node_modules/bulma/sass/elements/all';
+//@import '../../node_modules/bulma/sass/components/all';
+//@import '../../node_modules/bulma/sass/grid/all';
+//@import '../../node_modules/bulma/sass/layout/all';
+
+.hero.is-home {
+	background: linear-gradient(140deg, #c0c0c0 10%, #000 90%) center / cover no-repeat;
+}
