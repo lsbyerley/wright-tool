@@ -4,7 +4,7 @@ var hogan = require('hogan-express');
 var http_module = require('http');
 var bodyParser = require('body-parser');
 var compression = require('compression');
-var config = {};
+var config;
 
 var app = express();
 app.engine('html', hogan);
@@ -19,6 +19,10 @@ app.set('partials', {
 });
 
 app.use(function (req, res, next) {
+
+  config = require('./config/config')(req.path);
+
+  //console.log(config);
 
   // Set secure http header settings from https://www.smashingmagazine.com/2017/04/secure-web-app-http-headers/
   // https://www.html5rocks.com/en/tutorials/security/content-security-policy/
@@ -42,17 +46,15 @@ app.use(function (req, res, next) {
     res.locals.is_dev = true;
 
   //set the nav links
-  res.locals.navLinks = [
-    { title: 'Capabilities', link: '/capabilities', active: (req.path === '/capabilities') ? 'is-active' : '' },
-    { title: 'Equipment', link: '/equipment', active: (req.path === '/equipment') ? 'is-active' : '' },
-    { title: 'Facilities', link: '/facilities', active: (req.path === '/facilities') ? 'is-active' : '' }
-  ];
+  res.locals.navLinks = config.navLinks;
+  //set the page meta
+  res.locals.pageMeta = config.pageMeta;
 
   next();
 });
 
 // App Routes
-require('./routes.js')(app, config);
+require('./routes.js')(app);
 
 var http = http_module.Server(app)
 http.listen(app.get('port'), function() {

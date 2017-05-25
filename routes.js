@@ -1,5 +1,5 @@
 
-module.exports = function(app, config) {
+module.exports = function(app) {
 
 	app.get('/', function(req, res) {
 		return res.render('index.html');
@@ -15,6 +15,17 @@ module.exports = function(app, config) {
 
 	app.get('/facilities', function(req, res) {
 		return res.render('pages/facilities.html');
+	});
+
+	//Error handling
+	app.use(function (err, req, res, next) {
+		console.error(err.stack)
+		res.status(500).render('pages/error.html');
+	});
+
+	//Page not found
+	app.use(function (req, res, next) {
+		res.status(404).render('pages/404.html');
 	});
 
 };
