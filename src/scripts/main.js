@@ -1,4 +1,5 @@
-window.jQuery = require('jquery');
+//window.jQuery = require('jquery');
+window.cash = require('cash-dom');
 
 (function(window, document, $) {
 	'use strict';
@@ -6,6 +7,7 @@ window.jQuery = require('jquery');
 	window.wtinc = (window.wtinc) ? window.wtinc : {};
 
 	$(document).ready(function() {
+
 		var $toggle = $('#header .nav-toggle');
 		var $menu = $('#header .nav-menu');
 
@@ -13,6 +15,7 @@ window.jQuery = require('jquery');
 			$(this).toggleClass('is-active');
 			$menu.toggleClass('is-active');
 		});
+
 	});
 	
-})(window, document, window.jQuery);
+})(window, document, window.cash);
