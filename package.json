@@ -14,7 +14,9 @@
     "server-build": "https://github.com/cosmicjs/cosmicapp-voting-app",
     "machinery-search": "https://themeforest.net/category/wordpress?utf8=%E2%9C%93&term=machinery&as=1&type=p&referrer=search&view=grid&sort=sales",
     "content-on-page": "http://preview.themeforest.net/item/wp-industry-industrial-engineering-wp-theme/full_screen_preview/12268542",
-    "cooldesign": "https://www.redweb.com/"
+    "cooldesign": "https://www.redweb.com/",
+    "page-transitions": "https://www.smashingmagazine.com/2016/07/improving-user-flow-through-page-transitions/",
+    "barbajs": "https://github.com/luruke/barba.js"
   },
   "author": "Lucas Byerley",
   "license": "ISC",

@@ -490,7 +490,6 @@
     var lower = v.toLowerCase();
 
     fn[lower] = function () {
-      console.log(this[0])
       return this[0].getBoundingClientRect()[lower];
     };
 
@@ -969,16 +968,14 @@ window.cash = require('cash-dom');
 
 	window.wtinc = (window.wtinc) ? window.wtinc : {};
 
-	$(document).ready(function() {
+	//console.log( $(window).width() );
 
-		var $toggle = $('#header .nav-toggle');
-		var $menu = $('#header .nav-menu');
+	var $toggle = $('#header .nav-toggle');
+	var $menu = $('#header .nav-menu');
 
-		$toggle.on('click', function() {
-			$(this).toggleClass('is-active');
-			$menu.toggleClass('is-active');
-		});
-
+	$toggle.on('click', function() {
+		$(this).toggleClass('is-active');
+		$menu.toggleClass('is-active');
 	});
 	
 })(window, document, window.cash);
