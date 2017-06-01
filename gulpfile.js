@@ -104,7 +104,7 @@ gulp.task('build-dev', function(callback) {
 	);
 });
 
-gulp.task('prod-server', function() {
+gulp.task('build-prod', function() {
 
 	var server = gls('server.js', {env: {NODE_ENV: 'production'}});
 	server.start();
