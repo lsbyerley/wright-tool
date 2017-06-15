@@ -79,6 +79,12 @@ gulp.task('dev-server', function() {
       server.start.bind(server)()
     });
 
+    //watch the views
+    gulp.watch('views/**/*.html', function(file) {
+    	console.log(file)
+    	server.notify.apply(server, [file]);
+    });
+
 	//watch the scss files
     gulp.watch(global.srcPath + 'styles/**/*.scss', ['styles', 'lint-styles']);
     gulp.watch(global.buildPath + 'styles/**/*.css', function(file) {

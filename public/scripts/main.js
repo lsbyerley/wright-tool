@@ -2687,6 +2687,14 @@ var Barba = require('barba.js');
 		$menu.toggleClass('is-active');
 	});
 
+	//vanilla js toggle
+	/*var burger = document.querySelector('.nav-toggle');
+	var menu = document.querySelector('.nav-menu');
+	burger.addEventListener('click', function() {
+		burger.classList.toggle('is-active');
+		menu.classList.toggle('is-active');
+	});*/
+
 	// Barba.js page transitions
 	Barba.Pjax.start();
 	Barba.Dispatcher.on('linkClicked', function(HTMLElement, MouseEvent) {

@@ -1,6 +1,7 @@
 {
   "name": "wright-tool",
   "version": "1.0.0",
+  "private": true,
   "description": "Website for Wright Tool Inc.",
   "main": "server.js",
   "repository": {
