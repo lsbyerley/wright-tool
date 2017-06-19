@@ -3,26 +3,68 @@
 
 <footer id="footer">
 
-    <nav class="level">
-        <div class="level-item has-text-centered">
-
+    <div class="upper">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-one-third ">
+                    <img class="logo" src="images/WrightToolLogo.png" alt="Wright Tool Inc. logo">
+                    <p>We at Wright Tool have extensive experience in a wide variety of industries. We are built for growth, focused on quality, and committed to the pursuit of excellence.</p>
+                </div>
+                <div class="column is-one-third"> 
+                    <p>
+                        <span class="icon">
+                            <i class="fa fa-map-marker"></i>
+                        </span>
+                        120 Parkview Circle<br>
+                        Piney Flats, TN 37686
+                    </p>
+                    <p>
+                        <span class="icon">
+                            <i class="fa fa-phone"></i>
+                        </span>
+                        (423) 583-5133
+                    </p>
+                    <p>
+                        <span class="icon">
+                            <i class="fa fa-map-marker"></i>
+                        </span>
+                        120 Parkview Circle<br>
+                        Piney Flats, TN 37686
+                    </p>
+                    <p>
+                        <span class="icon">
+                            <i class="fa fa-envelope"></i>
+                        </span>
+                        info@wrighttoolinc.com
+                    </p>
+                    <p>
+                        <span class="icon">
+                            <i class="fa fa-clock"></i>
+                        </span>
+                        Mon - Fri: 9:00 - 5:00
+                    </p>
+                </div>
+                <div class="column is-one-third">
+                    <ul class="foot-links">
+                        {{# navLinks }}
+                            <li>
+                                <a href="{{ link }}" class="foot-link">
+                                    <span class="icon">
+                                        <i class="fa fa-angle-right"></i>
+                                    </span>
+                                    {{ title }}
+                                </a>
+                            </li>
+                        {{/ navLinks }}
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="level-item has-text-centered">
+    </div>
 
-        </div>
-        <div class="level-item has-text-centered">
-
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="content has-text-centered">
-            <p>
-                <strong>Wright Tool Inc</strong>
-            </p>
-            <p>
-                Copyright {{ year }}
-            </p>
+    <div class="lower">
+        <div class="container has-text-centered">
+            <p class="copy">Wright Tool Inc. Copyright {{ year }}</p>
         </div>
     </div>
 </footer>
