@@ -13,10 +13,9 @@
 			description = "A service oriented company offering specialty tooling, precision piece work, and custom machine building for a variety of industries";
 
 		switch (path) {
-			case '/capabilities':
-				title = "Special Project Capabilities | " + title;
-				description = "Capabilities: Small Production Runs, Light Fabrication, Monthly Parts Contracts, Subcontract Work, Fixturing and Tooling, Castings, Machining, and Finish Processing";
-				break;
+			case '/about':
+				title = "About Us | " + title;
+				description = "About: Wright Tool has been in operation since 1989 and is located in a 40,000 square foot facility in the Tri-Country Industrial Park in Piney Flats, Tennessee"
 			case '/equipment':
 				title = "Our Equipment | " + title;
 				description = "Equipment: Boring, CNC Lathes, CNC Mills, EDM, Grinders, Fabrication, Manual Lathes, Lifts, Manual Mills, Saws, and Welding";
@@ -35,7 +34,7 @@
 
 	function buildNavLinks(path) {
 		return [
-			{ title: 'Capabilities', link: '/capabilities', active: (path === '/capabilities') ? 'is-active' : '' },
+			{ title: 'About Us', link: '/about', active: (path === '/about') ? 'is-active': '' },
 			{ title: 'Equipment', link: '/equipment', active: (path === '/equipment') ? 'is-active' : '' },
 			{ title: 'Facilities', link: '/facilities', active: (path === '/facilities') ? 'is-active' : '' }
 		];

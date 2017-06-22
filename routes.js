@@ -5,12 +5,12 @@ module.exports = function(app) {
 		return res.render('index.html');
 	});
 
-	app.get('/equipment', function(req, res) {
-		return res.render('pages/equipment.html');
+	app.get('/about', function(req, res) {
+		return res.render('pages/about.html');
 	});
 
-	app.get('/capabilities', function(req, res) {
-		return res.render('pages/capabilities.html');
+	app.get('/equipment', function(req, res) {
+		return res.render('pages/equipment.html');
 	});
 
 	app.get('/facilities', function(req, res) {

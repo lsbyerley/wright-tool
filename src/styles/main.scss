@@ -4,10 +4,11 @@
 @import '../../node_modules/bulma/sass/utilities/initial-variables';
 
 //SET CUSTOM BULMA VARIABLES AS NEEDED
-$primary: #15aafd;
+$primary: #186080;
 $text-light: #343434;
 $family-serif: Montserrat;
 $family-primary: $family-serif;
+$nav-height: 90px;
 
 //IMPORT REST OF BULMA
 @import '../../node_modules/bulma/bulma';
@@ -17,6 +18,50 @@ $family-primary: $family-serif;
 //@import '../../node_modules/bulma/sass/components/all';
 //@import '../../node_modules/bulma/sass/grid/all';
 //@import '../../node_modules/bulma/sass/layout/all';
+
+.top-info {
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+
+    .level {
+        height: 45px;
+
+        .level-item {
+
+            .icon {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.nav {
+
+    .nav-item {
+        text-transform: uppercase;
+
+        img.logo {
+            max-height: 3.75rem;
+        }
+
+        &.brand {
+            flex-direction: column;
+
+            .top {
+                color: #000;
+                font-weight: 700;
+                font-size: 22px;
+            }
+
+            .bottom {
+                color: $text-light;
+                font-size: 15px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}
 
 .hero.landing,
 .hero.machining-milling {
@@ -73,6 +118,11 @@ $family-primary: $family-serif;
 	background: linear-gradient(140deg, #c0c0c0 10%, #000 90%) center / cover no-repeat;
 }
 
+.panel-heading.is-primary {
+    background-color: $primary;
+    color: #fff;
+}
+
 .barba-container {
 	animation-duration: .75s;
 	animation-fill-mode: both;
@@ -88,30 +138,6 @@ $family-primary: $family-serif;
     to {
     	opacity: 1;
         transform: translate3d(0, 0, 0);
-    }
-}
-
-.top-info {
-    background: #000;
-    color: #fff;
-    font-size: 10px;
-
-    .level {
-        height: 45px;
-
-        .level-item {
-
-            .icon {
-                margin-right: 5px;
-            }
-        }
-    }
-}
-
-.nav {
-
-    .nav-item {
-        text-transform: uppercase;
     }
 }
 

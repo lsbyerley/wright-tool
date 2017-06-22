@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     {{^ is_dev }}
 		<link rel="stylesheet" href="/styles/main.min.css"/>
-	{{/ is_dev }} 
+	{{/ is_dev }}
 	{{# is_dev }}
 		<link rel="stylesheet" href="/styles/main.css"/>
 	{{/ is_dev }}
 </head>
 <body>
-	
+
 	<header id="header">
 
 		<div class="top-info">
@@ -54,10 +54,14 @@
 		  <div class="container">
 		    <div class="nav-left">
 		      <a href="/" class="nav-item">
-		        <img src="images/WrightToolLogo.png" alt="Wright Tool Inc. logo">
+		        <img class="logo" src="images/WrightToolLogo.png" alt="Wright Tool Inc. logo">
 		      </a>
+			  <a href="/" class="nav-item brand">
+				  <span class="top">WRIGHT</span>
+				  <span class="bottom">TOOL INC</span>
+			  </a>
 		    </div>
-		    
+
 		    <span class="nav-toggle">
 		      <span></span>
 		      <span></span>
@@ -66,7 +70,7 @@
 
 		    <div class="nav-right nav-menu">
 		    	{{# navLinks }}
-		    		<a href="{{ link }}" class="nav-item is-tab {{ active }}">{{ title }}</a>	
+		    		<a href="{{ link }}" class="nav-item is-tab {{ active }}">{{ title }}</a>
 		    	{{/ navLinks }}
 		    </div>
 		  </div>
@@ -76,4 +80,3 @@
 
 <div id="barba-wrapper">
 	<div class="barba-container">
-    
