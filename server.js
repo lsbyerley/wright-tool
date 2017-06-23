@@ -27,7 +27,7 @@ app.use(function (req, res, next) {
 
 	// Set secure http header settings from https://www.smashingmagazine.com/2017/04/secure-web-app-http-headers/
 	// https://www.html5rocks.com/en/tutorials/security/content-security-policy/
-	// these should be used on routes returning sensitive user information 
+	// these should be used on routes returning sensitive user information
 	//res.set('Cache-Control','no-cache,no-store,max-age=0,must-revalidate');
 	//res.set('Pragma','no-cache');
 	//res.set('Expires','-1');
@@ -37,7 +37,7 @@ app.use(function (req, res, next) {
 		//'Strict-Transport-Security','max-age=31536000; includeSubDomains; preload', //taking out for now, https not ready
 		'X-XSS-Protection': '1; mode=block',
 		'X-Frame-Options': 'SAMEORIGIN',
-		'Content-Security-Policy': "script-src 'self' http://localhost:35729", // for livereload, although could just take out for development
+		'Content-Security-Policy': "script-src 'self' http://localhost:35729 maps.googleapis.com", // for livereload, although could just take out for development
 		'X-Content-Type-Options': 'nosniff'
 	});
 
@@ -46,6 +46,8 @@ app.use(function (req, res, next) {
 	res.locals.is_dev = (env === 'development');
 	res.locals.navLinks = config.navLinks;
 	res.locals.pageMeta = config.pageMeta;
+
+	console.log(res.locals.pageMeta)
 
 	next();
 });

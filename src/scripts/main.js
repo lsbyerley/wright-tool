@@ -1,6 +1,8 @@
 window.cash = require('cash-dom');
 var Barba = require('barba.js');
 
+var aboutPageMap = require('./googleMap.js');
+
 (function(window, document, $) {
 	'use strict';
 
@@ -23,6 +25,31 @@ var Barba = require('barba.js');
 	});*/
 
 	// Barba.js page transitions
+	// Custom about page event for Google Map
+	var Aboutpage = Barba.BaseView.extend({
+		namespace: 'about',
+		onEnter: function() {
+			// The new Container is ready and attached to the DOM.
+			if (!window.google) {
+
+			}
+		},
+		onEnterCompleted: function() {
+		  	// The Transition has just finished.
+			if (typeof aboutPageMap === "object" && typeof window.google === "object") {
+				aboutPageMap.init();
+			}
+		},
+		onLeave: function() {
+		  	// A new Transition toward a new page has just started.
+		},
+		onLeaveCompleted: function() {
+		  	// The Container has just been removed from the DOM.
+		}
+	});
+	// Don't forget to init the view!
+	Aboutpage.init();
+
 	Barba.Pjax.start();
 	Barba.Dispatcher.on('linkClicked', function(HTMLElement, MouseEvent) {
 		var link = $(HTMLElement);
@@ -41,5 +68,5 @@ var Barba = require('barba.js');
             ga('send', 'pageview');
     	}
 	});
-	
+
 })(window, document, window.cash);
