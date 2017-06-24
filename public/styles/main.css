@@ -4957,16 +4957,11 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
-/* --------------------------------
-
-Main components
-
--------------------------------- */
 #google-container {
-  position: relative;
-  width: 100%;
+  background-color: #e7eaf0;
   height: 200px;
-  background-color: #e7eaf0; }
+  position: relative;
+  width: 100%; }
   @media only screen and (min-width: 768px) {
     #google-container {
       height: 300px; } }
@@ -4977,46 +4972,44 @@ Main components
 #cd-google-map {
   position: relative; }
   #cd-google-map address {
-    position: absolute;
-    width: 100%;
+    background-color: rgba(24, 96, 128, 0.9);
     bottom: 0;
+    color: #fff;
+    font-size: 1rem;
     left: 0;
     padding: 1em 1em;
-    background-color: rgba(24, 96, 128, 0.9);
-    color: #ffffff;
-    font-size: 13px;
-    font-size: 0.8125rem; }
+    position: absolute;
+    width: 100%; }
     @media only screen and (min-width: 768px) {
       #cd-google-map address {
-        font-size: 15px;
-        font-size: 0.9375rem;
         text-align: center; } }
 
-#cd-zoom-in, #cd-zoom-out {
-  height: 32px;
-  width: 32px;
+#cd-zoom-in,
+#cd-zoom-out {
+  background-color: #186080;
+  border-radius: 3px;
   cursor: pointer;
-  margin-left: 10px;
-  background-color: rgba(24, 96, 128, 0.9);
-  background-repeat: no-repeat;
-  background-size: 32px 64px;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-controller.svg"); }
-  .no-touch #cd-zoom-in:hover, .no-touch #cd-zoom-out:hover {
-    background-color: #186080; }
+  height: 32px;
+  margin-left: 10px; }
+  #cd-zoom-in .icon,
+  #cd-zoom-out .icon {
+    color: #fff;
+    height: 32px;
+    width: 32px; }
+    #cd-zoom-in .icon .fa,
+    #cd-zoom-out .icon .fa {
+      font-size: 14px; }
   @media only screen and (min-width: 768px) {
-    #cd-zoom-in, #cd-zoom-out {
+    #cd-zoom-in,
+    #cd-zoom-out {
       margin-left: 50px; } }
 
 #cd-zoom-in {
-  background-position: 50% 0;
-  margin-top: 10px;
-  margin-bottom: 1px; }
+  margin-bottom: 3px;
+  margin-top: 10px; }
   @media only screen and (min-width: 768px) {
     #cd-zoom-in {
       margin-top: 50px; } }
-
-#cd-zoom-out {
-  background-position: 50% -32px; }
 
 .top-info {
   background: #000;
@@ -5029,7 +5022,7 @@ Main components
 
 .nav .nav-item {
   text-transform: uppercase; }
-  .nav .nav-item img.logo {
+  .nav .nav-item .logo {
     max-height: 3.75rem; }
   .nav .nav-item.brand {
     -webkit-box-orient: vertical;
@@ -5038,8 +5031,8 @@ Main components
             flex-direction: column; }
     .nav .nav-item.brand .top {
       color: #000;
-      font-weight: 700;
-      font-size: 22px; }
+      font-size: 22px;
+      font-weight: 700; }
     .nav .nav-item.brand .bottom {
       color: #343434;
       font-size: 15px;
@@ -5062,13 +5055,6 @@ Main components
   text-shadow: 1px 2px 1px #000;
   text-transform: uppercase; }
 
-.hero.parts .title,
-.hero.parts .subtitle {
-  color: #fff;
-  font-weight: bold;
-  text-shadow: 1px 2px 1px #000;
-  text-transform: uppercase; }
-
 .hero.landing {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("/images/wright-tool-home-hero.jpg");
   background-position: center;
@@ -5086,6 +5072,12 @@ Main components
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%; }
+  .hero.parts .title,
+  .hero.parts .subtitle {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 2px 1px #000;
+    text-transform: uppercase; }
 
 .hero.is-home {
   background: linear-gradient(140deg, #c0c0c0 10%, #000 90%) center/cover no-repeat; }
@@ -5140,5 +5132,5 @@ Main components
         color: #186080; }
   #footer .lower {
     background: #0e0e0e;
-    padding: 1rem;
-    color: #fff; }
+    color: #fff;
+    padding: 1rem; }

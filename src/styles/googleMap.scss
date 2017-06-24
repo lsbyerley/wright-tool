@@ -8,61 +8,45 @@ $background: #e7eaf0; // body background color
 
 $color-1: #2d313f; // blue
 $color-2: $primary; // red
-$color-3: #ffffff; // white
+$color-3: #fff; // white
 
 // variables - fonts
-
 $primary-font: $family-primary;
 
 // rem fallback - credits: http://zerosixthree.se/
-
-@function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return $remSize * 1rem;
-}
-
-@mixin font-size($size) {
-  font-size: $size;
-  font-size: calculateRem($size);
+@function calculate-rem($size) {
+  $rem-size: $size / 16px;
+  @return $rem-size * 1rem;
 }
 
 // layout - breakpoints
-
-$S:     320px;
-$M:     768px;
-$L:     1192px;
+$small: 320px;
+$medium: 768px;
+$large: 1192px;
 
 // layout - media queries
-
-@mixin MQ($canvas) {
-  @if $canvas == S {
-   @media only screen and (min-width: $S) { @content; }
-  }
-  @else if $canvas == M {
-   @media only screen and (min-width: $M) { @content; }
-  }
-  @else if $canvas == L {
-   @media only screen and (min-width: $L) { @content; }
-  }
+@mixin media-query($canvas) {
+    @if $canvas == small {
+        @media only screen and (min-width: $small) { @content; }
+    } @else if $canvas == medium {
+        @media only screen and (min-width: $medium) { @content; }
+    } @else if $canvas == large {
+        @media only screen and (min-width: $large) { @content; }
+    }
 }
 
-/* --------------------------------
-
-Main components
-
--------------------------------- */
-
+// Main components
 #google-container {
+    background-color: $background;
+    height: 200px;
     position: relative;
     width: 100%;
-    height: 200px;
-    background-color: $background;
 
-    @include MQ(M) {
+    @include media-query(medium) {
     	height: 300px;
     }
 
-    @include MQ(L) {
+    @include media-query(large) {
     	height: 600px;
     }
 }
@@ -71,51 +55,49 @@ Main components
 	position: relative;
 
 	address {
-		position: absolute;
+        background-color: rgba($color-2, .9);
+        bottom: 0;
+        color: $color-3;
+        font-size: 1rem;
+        left: 0;
+        padding: 1em 1em;
+        position: absolute;
 		width: 100%;
-		bottom: 0;
-		left: 0;
-		padding: 1em 1em;
-		background-color: rgba($color-2, .9);
-		color: $color-3;
-		@include font-size(13px);
 
-		@include MQ(M) {
-			@include font-size(15px);
+		@include media-query(medium) {
 			text-align: center;
 		}
 	}
 }
 
-#cd-zoom-in, #cd-zoom-out {
+#cd-zoom-in,
+#cd-zoom-out {
+    background-color: rgba($color-2, 1);
+    border-radius: 3px;
+    cursor: pointer;
 	height: 32px;
-	width: 32px;
-	cursor: pointer;
-	margin-left: 10px;
-	background-color: rgba($color-2, .9);
-	background-repeat: no-repeat;
-	background-size: 32px 64px;
-	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-controller.svg');
+    margin-left: 10px;
 
-	.no-touch &:hover {
-		background-color: rgba($color-2, 1);
-	}
+    .icon {
+        color: #fff;
+        height: 32px;
+        width: 32px;
 
-	@include MQ(M) {
+        .fa {
+            font-size: 14px;
+        }
+    }
+
+	@include media-query(medium) {
 		margin-left: 50px;
 	}
 }
 
 #cd-zoom-in {
-	background-position: 50% 0;
+    margin-bottom: 3px;
 	margin-top: 10px;
-	margin-bottom: 1px;
 
-	@include MQ(M) {
+	@include media-query(medium) {
 		margin-top: 50px;
 	}
-}
-
-#cd-zoom-out {
-	background-position: 50% -32px;
 }
