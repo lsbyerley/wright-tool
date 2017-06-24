@@ -23,8 +23,6 @@ app.use(function (req, res, next) {
 
 	config = require('./config/config')(req.path);
 
-	//console.log(config);
-
 	// Set secure http header settings from https://www.smashingmagazine.com/2017/04/secure-web-app-http-headers/
 	// https://www.html5rocks.com/en/tutorials/security/content-security-policy/
 	// these should be used on routes returning sensitive user information
@@ -46,8 +44,6 @@ app.use(function (req, res, next) {
 	res.locals.is_dev = (env === 'development');
 	res.locals.navLinks = config.navLinks;
 	res.locals.pageMeta = config.pageMeta;
-
-	console.log(res.locals.pageMeta)
 
 	next();
 });

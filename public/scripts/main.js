@@ -2679,14 +2679,186 @@ return /******/ (function(modules) { // webpackBootstrap
         init: function() {
             var $latitude = 36.436095,
         		$longitude = -82.2996777,
-        		$map_zoom = 14;
+        		$map_zoom = 14,
+                $main_color = '#2d313f',
+        		$saturation= -20,
+        		$brightness= 5;
 
             //google map custom marker icon - .png fallback for IE11
         	var is_internetExplorer11= navigator.userAgent.toLowerCase().indexOf('trident') > -1;
         	var $marker_url = ( is_internetExplorer11 ) ? 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location.png' : 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location_1.svg';
 
 
-            var style = [];
+            //we define here the style of the map
+            var style= [
+                {
+                    //set saturation for the labels on the map
+                    elementType: 'labels',
+                    stylers: [
+                        {saturation: $saturation}
+                    ]
+                },
+                {	//poi stands for point of interest - don't show these lables on the map
+                    featureType: 'poi',
+                    elementType: 'labels',
+                    stylers: [
+                        {visibility: 'off'}
+                    ]
+                },
+                {
+                    //don't show highways lables on the map
+                    featureType: 'road.highway',
+                    elementType: 'labels',
+                    stylers: [
+                        {visibility: 'off'}
+                    ]
+                },
+                {
+                    //don't show local road lables on the map
+                    featureType: 'road.local',
+                    elementType: 'labels.icon',
+                    stylers: [
+                        {visibility: 'off'}
+                    ]
+                },
+                {
+                    //don't show arterial road lables on the map
+                    featureType: 'road.arterial',
+                    elementType: 'labels.icon',
+                    stylers: [
+                        {visibility: 'off'}
+                    ]
+                },
+                {
+                    //don't show road lables on the map
+                    featureType: 'road',
+                    elementType: 'geometry.stroke',
+                    stylers: [
+                        {visibility: 'off'}
+                    ]
+                },
+                //style different elements on the map
+                {
+                    featureType: 'transit',
+                    elementType: 'geometry.fill',
+                    stylers: [
+                        { hue: $main_color },
+                        { visibility: 'on' },
+                        { lightness: $brightness },
+                        { saturation: $saturation }
+                    ]
+                },
+                {
+                    featureType: 'poi',
+                    elementType: 'geometry.fill',
+                    stylers: [
+                        { hue: $main_color },
+                        { visibility: 'on' },
+                        { lightness: $brightness },
+                        { saturation: $saturation }
+                    ]
+                },
+                {
+                    featureType: 'poi.government',
+                    elementType: 'geometry.fill',
+                    stylers: [
+                        { hue: $main_color },
+                        { visibility: 'on' },
+                        { lightness: $brightness },
+                        { saturation: $saturation }
+                    ]
+                },
+                {
+                    featureType: 'poi.sport_complex',
+                    elementType: 'geometry.fill',
+                    stylers: [
+                        { hue: $main_color },
+                        { visibility: 'on' },
+                        { lightness: $brightness },
+                        { saturation: $saturation }
+                    ]
+                },
+                {
+                    featureType: 'poi.attraction',
+                    elementType: 'geometry.fill',
+                    stylers: [
+                        { hue: $main_color },
+                        { visibility: 'on' },
+                        { lightness: $brightness },
+                        { saturation: $saturation }
+                    ]
+                },
+                {
+                    featureType: 'poi.business',
+                    elementType: 'geometry.fill',
+                    stylers: [
+                        { hue: $main_color },
+                        { visibility: 'on' },
+                        { lightness: $brightness },
+                        { saturation: $saturation }
+                    ]
+                },
+                {
+                    featureType: 'transit',
+                    elementType: 'geometry.fill',
+                    stylers: [
+                        { hue: $main_color },
+                        { visibility: 'on' },
+                        { lightness: $brightness },
+                        { saturation: $saturation }
+                    ]
+                },
+                {
+                    featureType: 'transit.station',
+                    elementType: 'geometry.fill',
+                    stylers: [
+                        { hue: $main_color },
+                        { visibility: 'on' },
+                        { lightness: $brightness },
+                        { saturation: $saturation }
+                    ]
+                },
+                {
+                    featureType: 'landscape',
+                    stylers: [
+                        { hue: $main_color },
+                        { visibility: 'on' },
+                        { lightness: $brightness },
+                        { saturation: $saturation }
+                    ]
+
+                },
+                {
+                    featureType: 'road',
+                    elementType: 'geometry.fill',
+                    stylers: [
+                        { hue: $main_color },
+                        { visibility: 'on' },
+                        { lightness: $brightness },
+                        { saturation: $saturation }
+                    ]
+                },
+                {
+                    featureType: 'road.highway',
+                    elementType: 'geometry.fill',
+                    stylers: [
+                        { hue: $main_color },
+                        { visibility: 'on' },
+                        { lightness: $brightness },
+                        { saturation: $saturation }
+                    ]
+                },
+                {
+                    featureType: 'water',
+                    elementType: 'geometry',
+                    stylers: [
+                        { hue: $main_color },
+                        { visibility: 'on' },
+                        { lightness: $brightness },
+                        { saturation: $saturation }
+                    ]
+                }
+            ];
 
             //set google map options
         	var map_options = {
@@ -2745,6 +2917,7 @@ window.cash = require('cash-dom');
 var Barba = require('barba.js');
 
 var aboutPageMap = require('./googleMap.js');
+var loadScript = require('./util/loadScript.js');
 
 (function(window, document, $) {
 	'use strict';
@@ -2752,42 +2925,25 @@ var aboutPageMap = require('./googleMap.js');
 	window.wtinc = (window.wtinc) ? window.wtinc : {};
 
 	// Toggles the responsive nav
-	var $toggle = $('#header .nav-toggle');
-	var $menu = $('#header .nav-menu');
-	$toggle.on('click', function() {
-		$(this).toggleClass('is-active');
-		$menu.toggleClass('is-active');
+	var $toggle = document.querySelector('.nav-toggle');
+	var $menu = document.querySelector('.nav-menu');
+	$toggle.addEventListener('click', function() {
+		$toggle.classList.toggle('is-active');
+		$menu.classList.toggle('is-active');
 	});
-
-	//vanilla js toggle
-	/*var burger = document.querySelector('.nav-toggle');
-	var menu = document.querySelector('.nav-menu');
-	burger.addEventListener('click', function() {
-		burger.classList.toggle('is-active');
-		menu.classList.toggle('is-active');
-	});*/
 
 	// Barba.js page transitions
 	// Custom about page event for Google Map
 	var Aboutpage = Barba.BaseView.extend({
 		namespace: 'about',
 		onEnter: function() {
-			// The new Container is ready and attached to the DOM.
 			if (!window.google) {
-
-			}
-		},
-		onEnterCompleted: function() {
-		  	// The Transition has just finished.
-			if (typeof aboutPageMap === "object" && typeof window.google === "object") {
+				loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyB2KN3R37wRR-idz5kg6y0jhTZVS_qTQL8', function () {
+					 aboutPageMap.init();
+			    });
+			} else {
 				aboutPageMap.init();
 			}
-		},
-		onLeave: function() {
-		  	// A new Transition toward a new page has just started.
-		},
-		onLeaveCompleted: function() {
-		  	// The Container has just been removed from the DOM.
 		}
 	});
 	// Don't forget to init the view!
@@ -2803,7 +2959,7 @@ var aboutPageMap = require('./googleMap.js');
 	});
 	Barba.Dispatcher.on('newPageReady', function(currentStatus, prevStatus, HTMLElementContainer, newPageRawHTML) {
 		// For Google Analytics tracking, make sure ga() exists first.
-        if ( typeof ga === "function" ) {
+        if ( typeof ga === 'function' ) {
             ga('set', {
                 page: window.location.pathname,
                 title: document.title
@@ -2814,4 +2970,31 @@ var aboutPageMap = require('./googleMap.js');
 
 })(window, document, window.cash);
 
-},{"./googleMap.js":3,"barba.js":1,"cash-dom":2}]},{},[4]);
+},{"./googleMap.js":3,"./util/loadScript.js":5,"barba.js":1,"cash-dom":2}],5:[function(require,module,exports){
+(function(document) {
+	'use strict';
+
+    module.exports = function(url, callback) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+
+        if (script.readyState) { //IE
+            script.onreadystatechange = function () {
+                if (script.readyState == 'loaded' || script.readyState == 'complete') {
+                    script.onreadystatechange = null;
+                    callback();
+                }
+            };
+        } else { //Others
+            script.onload = function () {
+                callback();
+            };
+        }
+
+        script.src = url;
+        document.getElementsByTagName('body')[0].appendChild(script);
+    }
+
+})(document);
+
+},{}]},{},[4]);

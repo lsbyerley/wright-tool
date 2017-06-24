@@ -6,7 +6,7 @@ module.exports = function(app) {
 	});
 
 	app.get('/about', function(req, res) {
-		return res.render('pages/about.html');
+		return res.render('pages/about.html')
 	});
 
 	app.get('/equipment', function(req, res) {
