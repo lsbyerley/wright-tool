@@ -1,0 +1,42 @@
+
+#footer {
+    color: #fff;
+
+    .upper {
+        background: #1a1a1a;
+        padding: 1rem;
+
+        .columns {
+            .column {
+                padding-left: 3rem;
+            }
+
+            .column:nth-child(1) {
+                .logo {
+                    width: 80px;
+                }
+            }
+
+            .column:nth-child(2) {
+                color: #fff;
+            }
+
+            .column:nth-child(3) {
+                .foot-link {
+                    color: #fff;
+                    text-transform: uppercase;
+
+                    .icon {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+
+    .lower {
+        background: #0e0e0e;
+        color: #fff;
+        padding: 1rem;
+    }
+}

@@ -7,7 +7,7 @@
             var $latitude = 36.436095,
         		$longitude = -82.2996777,
         		$map_zoom = 14,
-                $main_color = '#2d313f',
+                $main_color = '#186080',
         		$saturation= -20,
         		$brightness= 5;
 

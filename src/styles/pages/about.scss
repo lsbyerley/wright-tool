@@ -1,18 +1,5 @@
 @import '../../node_modules/bourbon/app/assets/stylesheets/bourbon';
 
-// variables - colors
-
-$main-text: $primary; // main text
-$link: #d36868; // anchor tags
-$background: #e7eaf0; // body background color
-
-$color-1: #2d313f; // blue
-$color-2: $primary; // red
-$color-3: #fff; // white
-
-// variables - fonts
-$primary-font: $family-primary;
-
 // rem fallback - credits: http://zerosixthree.se/
 @function calculate-rem($size) {
   $rem-size: $size / 16px;
@@ -37,42 +24,40 @@ $large: 1192px;
 
 // Main components
 #google-container {
-    background-color: $background;
-    height: 200px;
+    background-color: #e7eaf0;
+    height: 300px;
     position: relative;
     width: 100%;
 
     @include media-query(medium) {
-    	height: 300px;
+    	height: 400px;
     }
 
     @include media-query(large) {
-    	height: 600px;
+    	height: 500px;
     }
 }
 
 #cd-google-map {
+    padding: 0;
 	position: relative;
 
 	address {
-        background-color: rgba($color-2, .9);
-        bottom: 0;
-        color: $color-3;
+        background-color: rgba(24, 96, 128, .9);
+        color: #fff;
         font-size: 1rem;
-        left: 0;
-        padding: 1em 1em;
-        position: absolute;
-		width: 100%;
-
-		@include media-query(medium) {
-			text-align: center;
-		}
+        font-style: normal;
+        font-weight: bold;
+        padding: 1rem 1rem;
+        position: relative;
+        text-align: center;
+        width: 100%;
 	}
 }
 
 #cd-zoom-in,
 #cd-zoom-out {
-    background-color: rgba($color-2, 1);
+    background-color: rgba($primary, 1);
     border-radius: 3px;
     cursor: pointer;
 	height: 32px;
