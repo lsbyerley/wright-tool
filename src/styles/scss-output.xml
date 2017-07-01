@@ -1,1 +1,1 @@
-{}
+{"src/styles/pages/index.scss":[{"line":78,"column":17,"length":13,"severity":"warning","reason":"Properties should be ordered background-color, border-radius, padding","linter":"PropertySortOrder"}]}

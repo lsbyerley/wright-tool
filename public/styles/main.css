@@ -5049,6 +5049,28 @@ label.panel-block {
 .hero.is-home {
   background: linear-gradient(140deg, #c0c0c0 10%, #000 90%) center/cover no-repeat; }
 
+.columns.solutions .card {
+  box-shadow: none; }
+
+.columns.solutions .media {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .columns.solutions .media .media-content .title {
+    color: #343434;
+    font-size: 1rem; }
+  .columns.solutions .media .media-left {
+    background-color: #a5e5ff;
+    border-radius: 50%;
+    padding: 5px; }
+    .columns.solutions .media .media-left .icon {
+      background-color: #16abfe;
+      padding: 25px;
+      border-radius: 50%; }
+      .columns.solutions .media .media-left .icon .fa {
+        color: #fff;
+        font-size: 1.5rem; }
+
 #google-container {
   background-color: #e7eaf0;
   height: 300px;
