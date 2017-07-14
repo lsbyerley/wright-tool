@@ -9,12 +9,30 @@ var loadScript = require('./util/loadScript.js');
 
 	window.wtinc = (window.wtinc) ? window.wtinc : {};
 
-	// Toggles the responsive nav
-	var $toggle = document.querySelector('.nav-toggle');
-	var $menu = document.querySelector('.nav-menu');
-	$toggle.addEventListener('click', function() {
-		$toggle.classList.toggle('is-active');
-		$menu.classList.toggle('is-active');
+	document.addEventListener('DOMContentLoaded', function () {
+
+	  // Get all "nav-burger" elements
+	  var $navBurgers = Array.prototype.slice.call(document.querySelectorAll('.nav-burger'), 0);
+
+	  // Check if there are any nav burgers
+	  if ($navBurgers.length > 0) {
+
+	    // Add a click event on each of them
+	    $navBurgers.forEach(function ($el) {
+	      $el.addEventListener('click', function() {
+
+	        // Get the target from the "data-target" attribute
+	        var target = $el.dataset.target;
+	        var $target = document.getElementById(target);
+
+	        // Toggle the class on both the "nav-burger" and the "nav-menu"
+	        $el.classList.toggle('is-active');
+	        $target.classList.toggle('is-active');
+
+	      });
+	    });
+	  }
+
 	});
 
 	// Barba.js page transitions
@@ -37,8 +55,8 @@ var loadScript = require('./util/loadScript.js');
 	Barba.Pjax.start();
 	Barba.Dispatcher.on('linkClicked', function(HTMLElement, MouseEvent) {
 		var link = $(HTMLElement);
-		if (link.hasClass('nav-item')) {
-			$('.nav-item').removeClass('is-active');
+		if (link.hasClass('navbar-item')) {
+			$('.navbar-item').removeClass('is-active');
 			link.addClass('is-active');
 		}
 	});

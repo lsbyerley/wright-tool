@@ -16,29 +16,17 @@
     }
 }
 
-.nav {
+.navbar-wrap {
+    background-color: #fff;
 
-    .nav-item {
-        text-transform: uppercase;
+    .navbar {
 
-        .logo {
-            max-height: 3.75rem;
-        }
+        .navbar-brand {
 
-        &.brand {
-            flex-direction: column;
-
-            .top {
-                color: #000;
-                font-size: 22px;
-                font-weight: 700;
-            }
-
-            .bottom {
-                color: $text-light;
-                font-size: 15px;
-                letter-spacing: 2px;
+            .logo {
+                max-height: 3rem;
             }
         }
     }
+
 }

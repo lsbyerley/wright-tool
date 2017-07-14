@@ -1,14 +1,26 @@
 @import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(//fonts.googleapis.com/css?family=Playfair+Display);
 
 //BULMA CSS FRAMEWORK
 @import '../../node_modules/bulma/sass/utilities/initial-variables';
 
 //SET CUSTOM BULMA VARIABLES AS NEEDED
-$primary: #186080;
-$text-light: #343434;
+$black: #1e2022;
+$dark-grey: #24272B;
+$silver: #c9d6de;
+$light-grey: #f0f5f9;
+
+$primary: $black;
+
 $family-serif: Montserrat;
 $family-primary: $family-serif;
-$nav-height: 90px;
+
+$navbar-height: 90px;
+$navbar-item: $dark-grey;
+$navbar-item-hover: $black !default;
+//$navbar-item-hover-background: $background !default
+//$navbar-item-active: $black !default
+//$navbar-item-active-background: transparent !default
 
 //IMPORT REST OF BULMA
 @import '../../node_modules/bulma/bulma';
@@ -28,7 +40,7 @@ $nav-height: 90px;
 @import './pages/about';
 
 .hero.page-header {
-    background-image: linear-gradient(135deg, $primary 0%, darken($primary, 40%) 100%);
+    background-image: linear-gradient(135deg, $dark-grey 0%, darken($dark-grey, 40%) 100%);
 
     &::before {
         background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, .25), rgba(255, 255, 255, .25) 1px, transparent 1px, transparent 6px);

@@ -25,13 +25,13 @@ gulp.task('styles', function() {
 
     return gulp.src(global.srcPath + 'styles/main.scss')
 	.pipe(sass())
-	.on('error', handleErrors)
+	.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
 	.pipe(autoprefixer({ browsers: ['ie >= 8', 'last 2 versions', '> 1%'], map: false }))
-	.on('error', handleErrors)
+	.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
 	.pipe(gulp.dest(global.buildPath + 'styles/'))
 	.pipe(rename({ suffix: '.min' }))
 	.pipe(minifycss({safe: true}))
-	.on('error', handleErrors)
+	.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
 	.pipe(gulp.dest(global.buildPath + 'styles/'));
 
 });
@@ -58,13 +58,13 @@ gulp.task('scripts', function() {
 	});
 
 	return b.bundle()
-		.on('error', handleErrors)
+		.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
 		.pipe(source('main.js')) 					//Pass desired output filename to vinyl-source-stream
 		.pipe(buffer())
 		.pipe(gulp.dest(global.buildPath + 'scripts/'))
-		.pipe(rename({ suffix: '.min' }))
 		.pipe(uglify())
-		.on('error', handleErrors)
+		.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+        .pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest(global.buildPath + 'scripts/'));
 
 });
@@ -88,6 +88,7 @@ gulp.task('dev-server', function() {
 	//watch the scss files
     gulp.watch(global.srcPath + 'styles/**/*.scss', ['styles', 'lint-styles']);
     gulp.watch(global.buildPath + 'styles/**/*.css', function(file) {
+        console.log(file)
     	server.notify.apply(server, [file]);
     });
 
@@ -100,6 +101,14 @@ gulp.task('dev-server', function() {
 
 });
 
+gulp.task('prod-server', function() {
+
+    // false turns off livereload
+    var server = gls('server.js', {env: {NODE_ENV: 'production'}}, false);
+	server.start();
+
+})
+
 gulp.task('build-dev', function(callback) {
 	runSequence(
 		'styles',
@@ -110,18 +119,11 @@ gulp.task('build-dev', function(callback) {
 	);
 });
 
-gulp.task('build-prod', function() {
-
-	var server = gls('server.js', {env: {NODE_ENV: 'production'}});
-	server.start();
-
+gulp.task('build-prod', function(callback) {
+    runSequence(
+		'styles',
+		'scripts',
+		'prod-server',
+		callback
+	);
 });
-
-// -----------------------------------------
-// Notify any compile errors
-// -----------------------------------------
-function handleErrors(error) {
-	gutil.log('Compile Error: ', error.message);
-	notify.onError("Error: <%= error.message %>");
-	this.emit('end');
-}

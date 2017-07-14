@@ -86,3 +86,32 @@
         }
     }
 }
+
+.section.capabilities {
+    background-color: lighten($primary, 60%);
+
+    .title {
+
+    }
+
+    .column .image {
+
+        &::before {
+            position: absolute;
+            bottom: 0;
+            content: '';
+            background: #ffffff;
+            width: 100%;
+            top: 50%;
+            left: 0;
+            right: 0;
+            z-index: -1;
+        }
+
+        .img {
+            border-radius: 50%;
+            width: 40%;
+        }
+    }
+
+}
