@@ -2914,6 +2914,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 },{}],4:[function(require,module,exports){
 window.cash = require('cash-dom');
+//window.jQuery = require('jquery');
 var Barba = require('barba.js');
 
 var aboutPageMap = require('./googleMap.js');
@@ -2924,23 +2925,24 @@ var loadScript = require('./util/loadScript.js');
 
 	window.wtinc = (window.wtinc) ? window.wtinc : {};
 
+	// Toggles the responsive nav
 	document.addEventListener('DOMContentLoaded', function () {
 
-	  // Get all "nav-burger" elements
-	  var $navBurgers = Array.prototype.slice.call(document.querySelectorAll('.nav-burger'), 0);
+	  // Get all "navbar-burger" elements
+	  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
 	  // Check if there are any nav burgers
-	  if ($navBurgers.length > 0) {
+	  if ($navbarBurgers.length > 0) {
 
 	    // Add a click event on each of them
-	    $navBurgers.forEach(function ($el) {
+	    $navbarBurgers.forEach(function ($el) {
 	      $el.addEventListener('click', function() {
 
 	        // Get the target from the "data-target" attribute
 	        var target = $el.dataset.target;
 	        var $target = document.getElementById(target);
 
-	        // Toggle the class on both the "nav-burger" and the "nav-menu"
+	        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
 	        $el.classList.toggle('is-active');
 	        $target.classList.toggle('is-active');
 

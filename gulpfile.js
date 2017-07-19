@@ -75,7 +75,7 @@ gulp.task('dev-server', function() {
 	server.start();
 
 	//watch the server, routes, and config file for changes
-	gulp.watch(['server.js', 'routes.js', './config/config.js'], function() {
+	gulp.watch(['server.js', 'routes.js', './config/**/*.js'], function() {
       server.start.bind(server)()
     });
 

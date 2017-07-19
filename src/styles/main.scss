@@ -1,19 +1,22 @@
-@import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(//fonts.googleapis.com/css?family=Playfair+Display);
+@import url(//fonts.googleapis.com/css?family=Lato:300,400);
+@import url(//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700);
+@import url(//fonts.googleapis.com/css?family=Titillium+Web:300,600);
 
 //BULMA CSS FRAMEWORK
 @import '../../node_modules/bulma/sass/utilities/initial-variables';
 
 //SET CUSTOM BULMA VARIABLES AS NEEDED
 $black: #1e2022;
+$blue: #186080;
+$blue-light: #2d313f;
 $dark-grey: #24272B;
 $silver: #c9d6de;
 $light-grey: #f0f5f9;
 
 $primary: $black;
 
-$family-serif: Montserrat;
-$family-primary: $family-serif;
+$family-primary: Lato, serif;
+$family-secondary: Lato, serif;
 
 $navbar-height: 90px;
 $navbar-item: $dark-grey;
@@ -31,6 +34,11 @@ $navbar-item-hover: $black !default;
 //@import '../../node_modules/bulma/sass/grid/all';
 //@import '../../node_modules/bulma/sass/layout/all';
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
 // PARTIALS
 @import './partials/header';
 @import './partials/footer';
@@ -38,6 +46,7 @@ $navbar-item-hover: $black !default;
 // INDIVIDUAL PAGE STYLES
 @import './pages/index';
 @import './pages/about';
+@import './pages/equipment';
 
 .hero.page-header {
     background-image: linear-gradient(135deg, $dark-grey 0%, darken($dark-grey, 40%) 100%);

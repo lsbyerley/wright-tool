@@ -1,5 +1,9 @@
 @import '../../node_modules/bourbon/app/assets/stylesheets/bourbon';
 
+#about.section {
+    background: #f7f8fc;
+}
+
 // rem fallback - credits: http://zerosixthree.se/
 @function calculate-rem($size) {
   $rem-size: $size / 16px;

@@ -1,176 +1,42 @@
 {{> header }}
 
-<section class="hero page-header">
+<!--<section class="hero page-header">
     <div class="hero-body">
         <div class="container">
             <h1 class="title">Equipment</h1>
             <h2 class="subtitle"></h2>
         </div>
     </div>
-</section>
-
-<!--<div class="panel">
-    <div class="panel-heading is-primary">CNC Lathes</div>
-    <div class="panel-block">(1) Mazak CNC Slant 30 Lathe with Fanuc Control – 22″ x 60″</div>
-    <div class="panel-block"></div>
-    <div class="panel-block"></div>
-    <div class="panel-block"></div>
-    <div class="panel-block"></div>
-</div>-->
+</section>-->
 
 <section class="section" id="equipment">
     <div class="container">
 
+        <h1 class="title">A Variety Of Equipment To Meet Your Every Need</h1>
+
         <div class="columns is-multiline">
 
-			<div class="column is-half">
-                <div class="panel">
-                    <div class="panel-heading is-primary">Boring Equipment</div>
-                    <div class="panel-block">(1) Pratt &amp; Whitney 38 Jig Bore .0001 digital read out – 24″ x 60″</div>
+            {{# equipment }}
+                <div class="column is-half">
+                    <div class="card equipment">
+                        <div class="card-header">
+                            <span class="icon">
+                              <i class="fa fa-phone"></i>
+                            </span>
+                            <h3 class="title">{{ title }}</h3>
+                        </div>
+                        <div class="card-content">
+                            <ul>
+                                {{# attrs }}
+                                    <li>{{.}}</li>
+                                {{/ attrs }}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            {{/ equipment }}
 
-            <div class="column is-half">
-                <div class="panel">
-                    <div class="panel-heading is-primary">CNC Lathes</div>
-                    <div class="panel-block">(1) Mazak CNC Slant 30 Lathe with Fanuc Control – 22″ x 60″</div>
-                    <div class="panel-block">(3) Kia 4NEII-600 Turning Center</div>
-                    <div class="panel-block">(6) Kia KT-21 Turning Center</div>
-                    <div class="panel-block">(1) Kia KT-31 Turning Center</div>
-                </div>
-            </div>
-
-            <div class="column is-half">
-                <div class="panel">
-                    <div class="panel-heading is-primary">CNC Mills</div>
-                    <div class="panel-block">(1) Kia 50 Mill Rotary Pallet</div>
-                    <div class="panel-block">(1) Kia 500 Mill</div>
-                    <div class="panel-block">(1) Kia VA50 20″ x 40″ Table with Fanuc 15M Control</div>
-                    <div class="panel-block">(9) Haas Vertical Machining Center with 4th Axis (VF1-VF5)</div>
-                    <div class="panel-block">(3) Haas Vertical Machining Center VF2 Super Speed New 2009</div>
-                </div>
-            </div>
-
-            <div class="column is-half">
-                <div class="panel">
-                    <div class="panel-heading is-primary">EDM</div>
-                    <div class="panel-block">(1) Fanuc 1B Submerged Wire, 12″ x 18″ x 12″</div>
-                </div>
-            </div>
-
-            <div class="column is-half">
-                <div class="panel">
-                    <div class="panel-heading is-primary">Grinders</div>
-                    <div class="panel-block">(1) Centerless Grinder up to 1-1/4 Dia.</div>
-                    <div class="panel-block">(1) OD Grinders, 14″ Dia. x 54″ Long</div>
-                    <div class="panel-block">(1) ID Grinders up to 3″</div>
-                    <div class="panel-block">(2) Surface Grinder, 12″ x 24″</div>
-                </div>
-            </div>
-
-            <div class="column is-half">
-                <div class="panel">
-                    <div class="panel-heading is-primary">Fabrication</div>
-                    <div class="panel-block">(1) Power Shear, 48″ x 1/8″</div>
-                    <div class="panel-block">(1) Arbor Press, 25 Ton</div>
-                    <div class="panel-block">(1) Verson Break Press, 25 Ton</div>
-                    <div class="panel-block">(1) Bliss, 35 Ton</div>
-                    <div class="panel-block">(1) Houdaille Metal Notcher #2</div>
-                    <div class="panel-block">(1) Hannifin Hydraulic 30 Ton Vertical Press</div>
-                    <div class="panel-block">(1) Buffalo Iron Worker</div>
-                </div>
-            </div>
-
-            <div class="column is-half">
-                <div class="panel">
-                    <div class="panel-heading is-primary">Manual Lathes</div>
-                    <div class="panel-block">(1) Hardinge Precision Bench Lathe</div>
-                    <div class="panel-block">(1) Hardinge Model HLV-H Tool Room Lathe</div>
-                    <div class="panel-block">(1) H.E.S. Tracer Lathe 16″ x 64″ Bed</div>
-                    <div class="panel-block">(1) Mazak Engine Lathe 18″ x 80″</div>
-                    <div class="panel-block">(1) Kingston 17″ x 60″ Lathe</div>
-                    <div class="panel-block">(1) Yausa 16″ x 36″ Engine Lathe</div>
-                    <div class="panel-block">(1) Lodge &amp; Shipley H.D. Gap Bed Lathe Model 25″/42″ x 96″</div>
-                </div>
-            </div>
-
-            <div class="column is-half">
-                <div class="panel">
-                    <div class="panel-heading is-primary">Lift Eqipment</div>
-                    <div class="panel-block">(2) 6000 lb. Forklift</div>
-                    <div class="panel-block">(1) 6000 lb. Forklift – Pneumatic Tires</div>
-                </div>
-            </div>
-
-            <div class="column is-half">
-                <div class="panel">
-                    <div class="panel-heading is-primary">Manual Mills</div>
-                    <div class="panel-block">(11) Bridgeport Style Knee-Mills with .0005 Digital Read Out</div>
-                    <div class="panel-block">(1) Cincinnati #4 Horizontal Mill</div>
-                    <div class="panel-block">(1) Sunstrand Auto Horizontal Mill</div>
-                </div>
-            </div>
-
-            <div class="column is-half">
-                <div class="panel">
-                    <div class="panel-heading is-primary">Miscellaneous</div>
-                    <div class="panel-block">(2) Air Compressors</div>
-                    <div class="panel-block">(1) Trinco Bead Blaster, 48″ x 48″</div>
-                    <div class="panel-block">(1) Dayton Rotary Barrel Tumbler</div>
-                    <div class="panel-block">(1) Cross Flow Paint Booth, 26’9″ L x 14’3″ W x 9’1/2″ H</div>
-                    <div class="panel-block">(1) Vibratory Tumbler</div>
-                </div>
-            </div>
-
-            <div class="column is-half">
-                <div class="panel">
-                    <div class="panel-heading is-primary">Quality Inspection Equipment</div>
-                    <div class="panel-block">(1) Mazak CNC Slant 30 Lathe with Fanuc Control – 22″ x 60″</div>
-                    <div class="panel-block">(1) Super Mike accurate to .000010</div>
-                    <div class="panel-block">(1) Rockwell Hardness Tester</div>
-                    <div class="panel-block">(1) 20″ Precision Bench Centers</div>
-                    <div class="panel-block">(1) 12″ Cadillac Pla-Chek .00005 accuracy</div>
-                    <div class="panel-block">(1) Granite Surface Plate 48″ x 96″ x 12″ Thick</div>
-                    <div class="panel-block">(1) Granite Surface Plate 36″ x 48″ x 10″ Thick</div>
-                    <div class="panel-block">(1) Mitutoyo Height Master 24″ – .00004 accuracy</div>
-                    <div class="panel-block">(1) 81 Piece Mitutoyo Master Gage Set</div>
-                    <div class="panel-block">(1) 40 Piece Mitutoyo Gage Block accuracy Set</div>
-                    <div class="panel-block">(1) 25 Piece Mitutoyo Gage Block accuracy Set</div>
-                    <div class="panel-block">(1) Boice C201 26″ x 32″ Coordinate Measuring Machine with Caliper Design Software</div>
-                    <div class="panel-block">(1) Ring &amp; Plug Thread Gages, all sizes up to 1″</div>
-                </div>
-            </div>
-
-            <div class="column is-half">
-                <div class="panel">
-                    <div class="panel-heading is-primary">Saws</div>
-                    <div class="panel-block">(1) Everising Horizontal Band Saw 12″ Capacity Auto-feed – cut .002 accuracy</div>
-                    <div class="panel-block">(1) Horizontal Band Saw</div>
-                    <div class="panel-block">(1) DoAll Vertical Saw, 40″ x 48″ Table with 20″ Throat</div>
-                    <div class="panel-block">(1) Emerson 12″ Disc Cut-off Saw</div>
-                    <div class="panel-block">(1) Enco Vertical Band Saw, 20″ x 24″ Table with 10″ Throat</div>
-                </div>
-            </div>
-
-            <div class="column is-half">
-                <div class="panel">
-                    <div class="panel-heading is-primary">Vehicles For Delivery</div>
-                    <div class="panel-block">(1) Half-Ton Pickup</div>
-                    <div class="panel-block">(1) 5-Ton Flatbed</div>
-                </div>
-            </div>
-
-            <div class="column is-half">
-                <div class="panel">
-                    <div class="panel-heading is-primary">Welding</div>
-                    <div class="panel-block">(1) Acetylene Welder</div>
-                    <div class="panel-block">(1) Airco Spot Welder</div>
-                    <div class="panel-block">(1) Miller TIG Welder</div>
-                    <div class="panel-block">(1) MIG 6-Axis Robotic Welding System</div>
-                    <div class="panel-block">(2) MIG Wire Feed Welder</div>
-                    <div class="panel-block">(1) Miller Dynasty 700 Tig Welder</div>
-                </div>
-            </div>
+        </div>
 
     </div>
 </section>

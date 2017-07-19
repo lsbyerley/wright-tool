@@ -2,10 +2,10 @@
 .top-info {
     background: #000;
     color: #fff;
-    font-size: 10px;
+    font-size: 12px;
 
     .level {
-        height: 45px;
+        padding: 10px 0;
 
         .level-item {
 
@@ -26,6 +26,12 @@
             .logo {
                 max-height: 3rem;
             }
+        }
+
+        .navbar-item {
+            font-family: 'Titillium Web', Lato, sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
         }
     }
 

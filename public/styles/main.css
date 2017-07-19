@@ -1,5 +1,6 @@
-@import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(//fonts.googleapis.com/css?family=Playfair+Display);
+@import url(//fonts.googleapis.com/css?family=Lato:300,400);
+@import url(//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700);
+@import url(//fonts.googleapis.com/css?family=Titillium+Web:300,600);
 /*! bulma.io v0.4.2 | MIT License | github.com/jgthms/bulma */
 @-webkit-keyframes spinAround {
   from {
@@ -112,7 +113,7 @@ button,
 input,
 select,
 textarea {
-  font-family: Montserrat; }
+  font-family: Lato, serif; }
 
 code,
 pre {
@@ -439,10 +440,10 @@ a.has-text-primary:hover, a.has-text-primary:focus {
   color: #060707; }
 
 .has-text-info {
-  color: #3273dc; }
+  color: #186080; }
 
 a.has-text-info:hover, a.has-text-info:focus {
-  color: #205bbc; }
+  color: #104055; }
 
 .has-text-success {
   color: #23d160; }
@@ -903,60 +904,60 @@ a.box:active {
         box-shadow: none;
         color: #fff; }
   .button.is-info {
-    background-color: #3273dc;
+    background-color: #186080;
     border-color: transparent;
     color: #fff; }
     .button.is-info:hover, .button.is-info.is-hovered {
-      background-color: #276cda;
+      background-color: #165875;
       border-color: transparent;
       color: #fff; }
     .button.is-info:focus, .button.is-info.is-focused {
       border-color: transparent;
-      box-shadow: 0 0 0.5em rgba(50, 115, 220, 0.25);
+      box-shadow: 0 0 0.5em rgba(24, 96, 128, 0.25);
       color: #fff; }
     .button.is-info:active, .button.is-info.is-active {
-      background-color: #2366d1;
+      background-color: #14506b;
       border-color: transparent;
       box-shadow: inset 0 1px 2px rgba(30, 32, 34, 0.2);
       color: #fff; }
     .button.is-info[disabled] {
-      background-color: #3273dc;
+      background-color: #186080;
       border-color: transparent;
       box-shadow: none; }
     .button.is-info.is-inverted {
       background-color: #fff;
-      color: #3273dc; }
+      color: #186080; }
       .button.is-info.is-inverted:hover {
         background-color: #f2f2f2; }
       .button.is-info.is-inverted[disabled] {
         background-color: #fff;
         border-color: transparent;
         box-shadow: none;
-        color: #3273dc; }
+        color: #186080; }
     .button.is-info.is-loading:after {
       border-color: transparent transparent #fff #fff !important; }
     .button.is-info.is-outlined {
       background-color: transparent;
-      border-color: #3273dc;
-      color: #3273dc; }
+      border-color: #186080;
+      color: #186080; }
       .button.is-info.is-outlined:hover, .button.is-info.is-outlined:focus {
-        background-color: #3273dc;
-        border-color: #3273dc;
+        background-color: #186080;
+        border-color: #186080;
         color: #fff; }
       .button.is-info.is-outlined.is-loading:after {
-        border-color: transparent transparent #3273dc #3273dc !important; }
+        border-color: transparent transparent #186080 #186080 !important; }
       .button.is-info.is-outlined[disabled] {
         background-color: transparent;
-        border-color: #3273dc;
+        border-color: #186080;
         box-shadow: none;
-        color: #3273dc; }
+        color: #186080; }
     .button.is-info.is-inverted.is-outlined {
       background-color: transparent;
       border-color: #fff;
       color: #fff; }
       .button.is-info.is-inverted.is-outlined:hover, .button.is-info.is-inverted.is-outlined:focus {
         background-color: #fff;
-        color: #3273dc; }
+        color: #186080; }
       .button.is-info.is-inverted.is-outlined[disabled] {
         background-color: transparent;
         border-color: #fff;
@@ -1391,7 +1392,7 @@ input[type="submit"].button {
     border-color: #1e2022; }
   .input.is-info,
   .textarea.is-info {
-    border-color: #3273dc; }
+    border-color: #186080; }
   .input.is-success,
   .textarea.is-success {
     border-color: #23d160; }
@@ -1545,7 +1546,7 @@ input[type="submit"].button {
   .select.is-primary select {
     border-color: #1e2022; }
   .select.is-info select {
-    border-color: #3273dc; }
+    border-color: #186080; }
   .select.is-success select {
     border-color: #23d160; }
   .select.is-warning select {
@@ -1620,7 +1621,7 @@ input[type="submit"].button {
   .help.is-primary {
     color: #1e2022; }
   .help.is-info {
-    color: #3273dc; }
+    color: #186080; }
   .help.is-success {
     color: #23d160; }
   .help.is-warning {
@@ -1986,7 +1987,7 @@ input[type="submit"].button {
     background-color: #1e2022;
     color: #fff; }
   .notification.is-info {
-    background-color: #3273dc;
+    background-color: #186080;
     color: #fff; }
   .notification.is-success {
     background-color: #23d160;
@@ -2037,9 +2038,9 @@ input[type="submit"].button {
   .progress.is-primary::-moz-progress-bar {
     background-color: #1e2022; }
   .progress.is-info::-webkit-progress-value {
-    background-color: #3273dc; }
+    background-color: #186080; }
   .progress.is-info::-moz-progress-bar {
-    background-color: #3273dc; }
+    background-color: #186080; }
   .progress.is-success::-webkit-progress-value {
     background-color: #23d160; }
   .progress.is-success::-moz-progress-bar {
@@ -2152,7 +2153,7 @@ input[type="submit"].button {
     background-color: #1e2022;
     color: #fff; }
   .tag.is-info {
-    background-color: #3273dc;
+    background-color: #186080;
     color: #fff; }
   .tag.is-success {
     background-color: #23d160;
@@ -2801,13 +2802,13 @@ input[type="submit"].button {
       border-color: #1e2022;
       color: #191b1c; }
   .message.is-info {
-    background-color: #f6f9fe; }
+    background-color: #f6fbfd; }
     .message.is-info .message-header {
-      background-color: #3273dc;
+      background-color: #186080;
       color: #fff; }
     .message.is-info .message-body {
-      border-color: #3273dc;
-      color: #22509a; }
+      border-color: #186080;
+      color: #123f53; }
   .message.is-success {
     background-color: #f6fef9; }
     .message.is-success .message-header {
@@ -5387,7 +5388,7 @@ label.panel-block {
       .hero.is-primary .nav-menu .nav-item {
         border-top-color: rgba(255, 255, 255, 0.2); } }
   .hero.is-info {
-    background-color: #3273dc;
+    background-color: #186080;
     color: #fff; }
     .hero.is-info a:not(.button),
     .hero.is-info strong {
@@ -5403,7 +5404,7 @@ label.panel-block {
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2); }
     @media screen and (max-width: 768px) {
       .hero.is-info .nav-menu {
-        background-color: #3273dc; } }
+        background-color: #186080; } }
     .hero.is-info a.nav-item,
     .hero.is-info .nav-item a:not(.button) {
       color: rgba(255, 255, 255, 0.7); }
@@ -5425,12 +5426,12 @@ label.panel-block {
     .hero.is-info .tabs.is-boxed li.is-active a, .hero.is-info .tabs.is-boxed li.is-active a:hover, .hero.is-info .tabs.is-toggle li.is-active a, .hero.is-info .tabs.is-toggle li.is-active a:hover {
       background-color: #fff;
       border-color: #fff;
-      color: #3273dc; }
+      color: #186080; }
     .hero.is-info.is-bold {
-      background-image: linear-gradient(141deg, #1577c6 0%, #3273dc 71%, #4366e5 100%); }
+      background-image: linear-gradient(141deg, #0b4f5a 0%, #186080 71%, #185c9a 100%); }
       @media screen and (max-width: 768px) {
         .hero.is-info.is-bold .nav-menu {
-          background-image: linear-gradient(141deg, #1577c6 0%, #3273dc 71%, #4366e5 100%); } }
+          background-image: linear-gradient(141deg, #0b4f5a 0%, #186080 71%, #185c9a 100%); } }
     @media screen and (max-width: 768px) {
       .hero.is-info .nav-toggle span {
         background-color: #fff; }
@@ -5641,12 +5642,16 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300; }
+
 .top-info {
   background: #000;
   color: #fff;
-  font-size: 10px; }
+  font-size: 12px; }
   .top-info .level {
-    height: 45px; }
+    padding: 10px 0; }
     .top-info .level .level-item .icon {
       margin-right: 5px; }
 
@@ -5654,6 +5659,10 @@ label.panel-block {
   background-color: #fff; }
   .navbar-wrap .navbar .navbar-brand .logo {
     max-height: 3rem; }
+  .navbar-wrap .navbar .navbar-item {
+    font-family: 'Titillium Web', Lato, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase; }
 
 #footer {
   color: #fff; }
@@ -5758,6 +5767,9 @@ label.panel-block {
     border-radius: 50%;
     width: 40%; }
 
+#about.section {
+  background: #f7f8fc; }
+
 #google-container {
   background-color: #e7eaf0;
   height: 300px;
@@ -5810,6 +5822,52 @@ label.panel-block {
   @media only screen and (min-width: 768px) {
     #cd-zoom-in {
       margin-top: 50px; } }
+
+#equipment.section {
+  background: #f7f8fc; }
+  #equipment.section .title {
+    color: #186080;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem; }
+  #equipment.section .card.equipment {
+    border: none;
+    box-shadow: none; }
+    #equipment.section .card.equipment .card-header {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      background: linear-gradient(to bottom, black, #186080);
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      box-shadow: none;
+      color: #fff;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      padding-top: 1rem; }
+      #equipment.section .card.equipment .card-header .icon {
+        height: auto;
+        width: auto; }
+        #equipment.section .card.equipment .card-header .icon .fa {
+          font-size: 3rem; }
+      #equipment.section .card.equipment .card-header .title {
+        color: #fff;
+        font-size: 2rem;
+        margin: 15px 0 10px 0; }
+    #equipment.section .card.equipment .card-content {
+      background: #dadadc;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px; }
+      #equipment.section .card.equipment .card-content ul li {
+        border-bottom: 1px dotted #c9c9c9;
+        color: #186080;
+        text-align: left;
+        font-size: 1rem;
+        font-family: Lato, serif;
+        font-weight: 400;
+        line-height: 36px; }
 
 .hero.page-header {
   background-image: linear-gradient(135deg, #24272B 0%, black 100%); }

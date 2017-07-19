@@ -10,6 +10,8 @@ module.exports = function(app) {
 	});
 
 	app.get('/equipment', function(req, res) {
+		var equipment = require('./config/equipment');
+		res.locals.equipment = equipment;
 		return res.render('pages/equipment.html');
 	});
 
