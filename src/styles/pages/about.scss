@@ -4,6 +4,23 @@
     background: #f7f8fc;
 }
 
+#industries.section {
+    background: $blue;
+    color: #fff;
+
+    .title {
+        color: #fff;
+    }
+
+    .column h2 {
+        background: $blue-light;
+        border-radius: 1rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding: 10px;
+    }
+}
+
 // rem fallback - credits: http://zerosixthree.se/
 @function calculate-rem($size) {
   $rem-size: $size / 16px;

@@ -7,8 +7,8 @@
 
 //SET CUSTOM BULMA VARIABLES AS NEEDED
 $black: #1e2022;
-$blue: #186080;
-$blue-light: #2d313f;
+$blue: #12465c;
+$blue-light: #2080a8;
 $dark-grey: #24272B;
 $silver: #c9d6de;
 $light-grey: #f0f5f9;
@@ -47,9 +47,11 @@ h1, h2, h3, h4, h5, h6 {
 @import './pages/index';
 @import './pages/about';
 @import './pages/equipment';
+@import './pages/facilities';
 
 .hero.page-header {
-    background-image: linear-gradient(135deg, $dark-grey 0%, darken($dark-grey, 40%) 100%);
+    background-image: linear-gradient(135deg, $blue 0%, darken($blue, 40%) 100%);
+    position: relative;
 
     &::before {
         background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, .25), rgba(255, 255, 255, .25) 1px, transparent 1px, transparent 6px);
