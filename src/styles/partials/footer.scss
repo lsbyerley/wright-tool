@@ -3,7 +3,7 @@
     color: #fff;
 
     .upper {
-        background: #1a1a1a;
+        background: $dark-grey;
         padding: 1rem;
 
         .columns {
@@ -35,7 +35,7 @@
     }
 
     .lower {
-        background: #0e0e0e;
+        background: $black;
         color: #fff;
         padding: 1rem;
     }

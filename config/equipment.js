@@ -1,6 +1,7 @@
 var equipment = [
   {
     title: 'CNC Lathes',
+    icon: 'fa-server',
     attrs: [
       '(1) Mazak CNC Slant 30 Lathe with Fanuc Control – 22″ x 60″',
       '(3) Kia 4NEII-600 Turning Center',
@@ -10,12 +11,14 @@ var equipment = [
   },
   {
     title: 'Boring Equipment',
+    icon: 'fa-microchip',
     attrs: [
       '(1) Pratt & Whitney 38 Jig Bore .0001 digital read out – 24″ x 60″'
     ]
   },
   {
     title: 'CNC Mills',
+    icon: 'fa-server',
     attrs: [
       '(1) Kia 50 Mill Rotary Pallet',
       '(1) Kia 500 Mill',
@@ -26,12 +29,14 @@ var equipment = [
   },
   {
     title: 'Electrical Discharge Machining',
+    icon: 'fa-bolt',
     attrs: [
       '(1) Fanuc 1B Submerged Wire, 12″ x 18″ x 12″'
     ]
   },
   {
     title: 'Grinders',
+    icon: 'fa-microchip',
     attrs: [
       '(1) Centerless Grinder up to 1-1/4 Dia.',
       '(1) OD Grinders, 14″ Dia. x 54″ Long',
@@ -41,6 +46,7 @@ var equipment = [
   },
   {
     title: 'Fabrication',
+    icon: 'fa-industry',
     attrs: [
       '(1) Power Shear, 48″ x 1/8″',
       '(1) Arbor Press, 25 Ton',
@@ -53,6 +59,7 @@ var equipment = [
   },
   {
     title: 'Manual Lathes',
+    icon: 'fa-hand-paper-o',
     attrs: [
       '(1) Hardinge Precision Bench Lathe',
       '(1) Hardinge Model HLV-H Tool Room Lathe',
@@ -65,6 +72,7 @@ var equipment = [
   },
   {
     title: 'Lift Eqipment',
+    icon: 'fa-truck',
     attrs: [
       '(2) 6000 lb. Forklift',
       '(1) 6000 lb. Forklift – Pneumatic Tires'
@@ -72,6 +80,7 @@ var equipment = [
   },
   {
     title: 'Manual Mills',
+    icon: 'fa-hand-paper-o',
     attrs: [
       '(11) Bridgeport Style Knee-Mills with .0005 Digital Read Out',
       '(1) Cincinnati #4 Horizontal Mill',
@@ -80,6 +89,7 @@ var equipment = [
   },
   {
     title: 'Miscellaneous',
+    icon: 'fa-star',
     attrs: [
       '(2) Air Compressors',
       '(1) Trinco Bead Blaster, 48″ x 48″',
@@ -90,6 +100,7 @@ var equipment = [
   },
   {
     title: 'Quality Inspection Equipment',
+    icon: 'fa-search',
     attrs: [
       '(1) Mazak CNC Slant 30 Lathe with Fanuc Control – 22″ x 60″',
       '(1) Super Mike accurate to .000010',
@@ -108,6 +119,7 @@ var equipment = [
   },
   {
     title: 'Saws',
+    icon: 'fa-microchip',
     attrs: [
       '(1) Everising Horizontal Band Saw 12″ Capacity Auto-feed – cut .002 accuracy',
       '(1) Horizontal Band Saw',
@@ -118,6 +130,7 @@ var equipment = [
   },
   {
     title: 'Vehicles For Delivery',
+    icon: 'fa-truck',
     attrs: [
       '(1) Half-Ton Pickup',
       '(1) 5-Ton Flatbed'
@@ -125,6 +138,7 @@ var equipment = [
   },
   {
     title: 'Welding',
+    icon: 'fa-plus',
     attrs: [
       '(1) Acetylene Welder',
       '(1) Airco Spot Welder',

@@ -1,6 +1,6 @@
 
 .top-info {
-    background: #000;
+    background: $black;
     color: #fff;
     font-size: 12px;
 
@@ -17,9 +17,10 @@
 }
 
 .navbar-wrap {
-    background-color: #fff;
+    background-color: $dark-grey;
 
     .navbar {
+        background-color: transparent;
 
         .navbar-brand {
 

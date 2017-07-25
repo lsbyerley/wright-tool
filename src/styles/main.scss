@@ -6,12 +6,9 @@
 @import '../../node_modules/bulma/sass/utilities/initial-variables';
 
 //SET CUSTOM BULMA VARIABLES AS NEEDED
-$black: #1e2022;
-$blue: #12465c;
-$blue-light: #2080a8;
-$dark-grey: #24272B;
-$silver: #c9d6de;
-$light-grey: #f0f5f9;
+$black: #0e0e0e;
+$dark-grey: #1a1a1a;
+$blue: #00bbff;
 
 $primary: $black;
 
@@ -19,8 +16,9 @@ $family-primary: Lato, serif;
 $family-secondary: Lato, serif;
 
 $navbar-height: 90px;
-$navbar-item: $dark-grey;
-$navbar-item-hover: $black !default;
+$navbar-item: #fff;
+$navbar-item-active: $blue;
+$navbar-item-hover: $blue;
 //$navbar-item-hover-background: $background !default
 //$navbar-item-active: $black !default
 //$navbar-item-active-background: transparent !default
@@ -73,11 +71,6 @@ h1, h2, h3, h4, h5, h6 {
         text-shadow: 1px 2px 1px #000;
         text-transform: uppercase;
     }
-}
-
-.panel-heading.is-primary {
-    background-color: $primary;
-    color: #fff;
 }
 
 .barba-container {

@@ -34,6 +34,7 @@
 }
 
 .hero.parts {
+    background-attachment: fixed;
     background-image: url('/images/parts-hero.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -64,17 +65,17 @@
         .media-content {
             .title {
                 color: #343434;
-                font-size: 1rem;
+                font-size: 1.5rem;
             }
         }
 
         .media-left {
-            background-color: #a5e5ff;
+            background-color: lighten($blue, 40%);
             border-radius: 50%;
             padding: 5px;
 
             .icon {
-                background-color: #16abfe;
+                background-color: $blue;
                 padding: 25px;
                 border-radius: 50%;
 
@@ -113,5 +114,22 @@
             width: 40%;
         }
     }
+}
 
+.hero.intro {
+    background-color: $primary;
+
+    .title {
+        color: #fff;
+        font-weight: 500;
+    }
+
+    .subtitle {
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        strong {
+            color: #fff;
+        }
+    }
 }

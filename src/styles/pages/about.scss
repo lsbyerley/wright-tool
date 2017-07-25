@@ -4,21 +4,51 @@
     background: #f7f8fc;
 }
 
+.hero.service-oriented {
+    background: lighten($dark-grey, 80%);
+
+    hr {
+        background-color: #000;
+    }
+}
+
+.hero.about-page {
+    background-attachment: fixed;
+    //background-image: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .7)), url('/images/wright-tool-building.jpg');
+    background-image: url('/images/wright-tool-building.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 100% 50%;
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+}
+
 #industries.section {
-    background: $blue;
-    color: #fff;
+    background: lighten($dark-grey, 80%);
+    color: #000;
 
+    hr {
+        background-color: #000;
+    }
     .title {
-        color: #fff;
+        color: #000;
     }
 
-    .column h2 {
-        background: $blue-light;
-        border-radius: 1rem;
-        font-size: 1.5rem;
-        font-weight: 500;
-        padding: 10px;
+    .columns {
+
+        .circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: relative;
+            cursor: default;
+            box-shadow: inset 0 0 0 16px rgba(255,255,255,0.6), 0 1px 2px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 3rem 0;
+        }
+
     }
+
 }
 
 // rem fallback - credits: http://zerosixthree.se/
@@ -64,7 +94,7 @@ $large: 1192px;
 	position: relative;
 
 	address {
-        background-color: rgba(24, 96, 128, .9);
+        background-color: $black;
         color: #fff;
         font-size: 1rem;
         font-style: normal;
