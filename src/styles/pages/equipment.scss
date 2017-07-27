@@ -1,17 +1,102 @@
 #equipment.section {
     background: #f7f8fc;
 
+    .tab {
+        position: relative;
+        margin-bottom: 1px;
+        width: 100%;
+        color: #fff;
+        overflow: hidden;
+
+        .label {
+            position: relative;
+            display: block;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            background: $black;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0;
+
+            .icon {
+                color: $blue;
+                margin-right: 5px;
+            }
+
+            &::after {
+                content: '+';
+                color: #00bbff;
+                position: absolute;
+                right: 20px;
+                top: 10px;
+                display: block;
+                text-align: center;
+                font-size: 1.5rem;
+                transition: transform .35s;
+            }
+        }
+
+        .tab-content {
+            max-height: 0;
+            overflow: hidden;
+            background: lighten($blue, 40%);
+            -webkit-transition: max-height .35s;
+            transition: max-height .35s;
+
+            .inner-wrap {
+                padding: 1.25rem;
+            }
+
+            ul {
+
+                li {
+                    border-bottom: 1px dotted #c9c9c9;
+                    color: darken($blue, 30%);
+                    text-align: left;
+                    font-size: 1rem;
+                    font-family: $family-secondary;
+                    font-weight: 400;
+                    line-height: 36px;
+                }
+            }
+        }
+
+        .label.is-active ~ .tab-content {
+            max-height: 1000px;
+        }
+
+        .label.is-active::after {
+            transform: rotate(315deg);
+        }
+
+    }
+
     .card.equipment {
         border: none;
         box-shadow: none;
 
         .card-header {
+            position: relative;
             justify-content: center;
             background: $black;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             box-shadow: none;
             color: $blue;
+
+            &::after {
+                content: '+';
+                position: absolute;
+                right: 0;
+                top: 0;
+                display: block;
+                width: 3em;
+                height: 3em;
+                line-height: 3;
+                text-align: center;
+                transition: all .35s;
+            }
 
             .icon {
                 height: auto;
@@ -33,6 +118,13 @@
             background: #dadadc;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
+            max-height: 0;
+            overflow: hidden;
+            padding: 0;
+
+            .inner-wrap {
+                padding: 1.25rem;
+            }
 
             ul {
 

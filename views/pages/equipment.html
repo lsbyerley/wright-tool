@@ -11,15 +11,30 @@
 
 <section class="section" id="equipment">
     <div class="container">
-
         <h1 class="title">Our Equipment</h1>
         <hr>
-
         <div class="columns is-multiline">
 
             {{# equipment }}
                 <div class="column is-half">
-                    <div class="card equipment">
+                    <div class="tab">
+                        <div class="label" for="tab-one">
+                            <span class="icon">
+                              <i class="fa {{ icon }}"></i>
+                            </span>
+                            {{ title }}
+                        </div>
+                        <div class="tab-content">
+                            <div class="inner-wrap">
+                                <ul>
+                                    {{# attrs }}
+                                        <li>{{.}}</li>
+                                    {{/ attrs }}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="card equipment">
                         <div class="card-header">
                             <span class="icon">
                               <i class="fa {{ icon }}"></i>
@@ -27,13 +42,15 @@
                             <h3 class="title">{{ title }}</h3>
                         </div>
                         <div class="card-content">
-                            <ul>
-                                {{# attrs }}
-                                    <li>{{.}}</li>
-                                {{/ attrs }}
-                            </ul>
+                            <div class="inner-wrap">
+                                <ul>
+                                    {{# attrs }}
+                                        <li>{{.}}</li>
+                                    {{/ attrs }}
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             {{/ equipment }}
 

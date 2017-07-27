@@ -21,6 +21,7 @@
 
     .navbar {
         background-color: transparent;
+        font-size: 1rem;
 
         .navbar-brand {
 
@@ -29,10 +30,27 @@
             }
         }
 
+        .navbar-burger {
+            &:hover {
+                background-color: transparent;
+            }
+            &.is-active span {
+                background-color: #4a4a4a;
+            }
+        }
+
         .navbar-item {
             font-family: 'Titillium Web', Lato, sans-serif;
             font-weight: 600;
             text-transform: uppercase;
+
+            &:hover {
+                background-color: transparent;
+                color: $blue;
+            }
+            &.is-active {
+                background-color: transparent;
+            }
         }
     }
 

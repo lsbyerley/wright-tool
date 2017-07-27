@@ -1,33 +1,76 @@
 
 #footer {
     color: #fff;
+    font-size: 1rem;
 
     .upper {
         background: $dark-grey;
         padding: 1rem;
 
         .columns {
+
             .column {
-                padding-left: 3rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
 
-            .column:nth-child(1) {
+            .column.left {
                 .logo {
                     max-height: 3rem;
                 }
             }
 
-            .column:nth-child(2) {
+            .column.middle {
                 color: #fff;
+
+                .address, .phone, .email, .hours {
+                    position: relative;
+                    text-align: left;
+                    padding-left: 35px;
+                    margin-bottom: 10px;
+                    line-height: 20px;
+                    min-width: 200px;
+
+                    &::before {
+                        font-family: "FontAwesome";
+                        font-size: 21px;
+                        height: 1.5rem;
+                        width: 1.5rem;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+
+                .address::before {
+                    content: '\f041'; //fa-map-marker
+                    top: 10px;
+                }
+                .phone::before {
+                    content: '\f095'; //fa-phone
+                }
+                .email::before {
+                    content: '\f0e0'; //fa-envelope
+                }
+                .hours::before {
+                    content: '\f017'; //fa-clock-o
+                }
             }
 
-            .column:nth-child(3) {
+            .column.right {
                 .foot-link {
                     color: #fff;
                     text-transform: uppercase;
+                    font-family: 'Titillium Web', Lato, sans-serif;
+                    font-weight: 600;
 
+                    &:hover {
+                        color: $blue;
+                    }
                     .icon {
-                        color: $primary;
+                        color: $blue;
                     }
                 }
             }

@@ -5,31 +5,28 @@
 }
 
 .hero.service-oriented {
-    background: lighten($dark-grey, 80%);
-
-    hr {
-        background-color: #000;
-    }
-}
-
-.hero.about-page {
     background-attachment: fixed;
-    //background-image: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .7)), url('/images/wright-tool-building.jpg');
-    background-image: url('/images/wright-tool-building.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .7)), url('/images/service-oriented-hero.jpg');
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 100% 50%;
-    padding-bottom: 8rem;
-    padding-top: 8rem;
+    background-size: cover;
+
+    .title {
+        color: #fff;
+        text-shadow: 1px 2px 1px #000;
+        text-transform: uppercase;
+    }
+
+    .subtitle {
+        color: #fff;
+        font-weight: 500;
+    }
 }
 
 #industries.section {
-    background: lighten($dark-grey, 80%);
+    background: #f7f8fc;
     color: #000;
 
-    hr {
-        background-color: #000;
-    }
     .title {
         color: #000;
     }
@@ -37,6 +34,9 @@
     .columns {
 
         .circle {
+            background-image: -webkit-radial-gradient(center top, ellipse cover, #474747 0%, #0e0e0e 100%);
+            color: #fff;
+            font-weight: 600;
             width: 100%;
             height: 100%;
             border-radius: 50%;

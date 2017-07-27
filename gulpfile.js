@@ -123,7 +123,6 @@ gulp.task('build-prod', function(callback) {
     runSequence(
 		'styles',
 		'scripts',
-		'prod-server',
 		callback
 	);
 });
