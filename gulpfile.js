@@ -87,14 +87,14 @@ gulp.task('dev-server', function() {
 
 	//watch the scss files
     gulp.watch(global.srcPath + 'styles/**/*.scss', ['styles', 'lint-styles']);
-    gulp.watch(global.buildPath + 'styles/**/*.css', function(file) {
+    gulp.watch(global.buildPath + 'styles/main.css', function(file) {
         console.log(file)
     	server.notify.apply(server, [file]);
     });
 
     //watch the js files
     gulp.watch(global.srcPath + 'scripts/**/*.js', ['scripts']);
-    gulp.watch(global.buildPath + 'scripts/**/*.js', function(file) {
+    gulp.watch(global.buildPath + 'scripts/main.js', function(file) {
     	console.log(file)
     	server.notify.apply(server, [file]);
     });

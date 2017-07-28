@@ -30,6 +30,9 @@ var loadScript = require('./util/loadScript.js');
 			});
 		}
 
+	});
+
+	function attachEquipmentTabHandlers() {
 		var $equipmentTabs = Array.prototype.slice.call(document.querySelectorAll('#equipment.section .tab .label'), 0);
 		if ($equipmentTabs.length > 0) {
 			$equipmentTabs.forEach(function($el) {
@@ -38,12 +41,11 @@ var loadScript = require('./util/loadScript.js');
 				})
 			})
 		}
-
-	});
+	}
 
 	// Barba.js page transitions
 	// Custom about page event for Google Map
-	var Aboutpage = Barba.BaseView.extend({
+	var aboutPage = Barba.BaseView.extend({
 		namespace: 'about',
 		onEnter: function() {
 			if (!window.google) {
@@ -55,15 +57,33 @@ var loadScript = require('./util/loadScript.js');
 			}
 		}
 	});
+	// Custom page event for equipment tabs
+	var equipmentPage = Barba.BaseView.extend({
+		namespace: 'equipment',
+		onEnter: function() {
+			attachEquipmentTabHandlers();
+		}
+	})
 	// Don't forget to init the view!
-	Aboutpage.init();
+	aboutPage.init();
+	equipmentPage.init();
 
 	Barba.Pjax.start();
 	Barba.Dispatcher.on('linkClicked', function(HTMLElement, MouseEvent) {
 		var link = $(HTMLElement);
-		if (link.hasClass('navbar-item')) {
+		if (link.hasClass('navbar-item') || link.hasClass('foot-link')) {
 			$('.navbar-item').removeClass('is-active');
-			link.addClass('is-active');
+			$('.foot-link').removeClass('is-active');
+			$('.navbar-item').each(function() {
+				if ( $(this)[0].pathname === link[0].pathname) {
+					$(this).addClass('is-active');
+				}
+			})
+			$('.foot-link').each(function() {
+				if ( $(this)[0].pathname === link[0].pathname) {
+					$(this).addClass('is-active');
+				}
+			})
 			$('.navbar .navbar-burger').toggleClass('is-active');
 			$('.navbar .navbar-menu').toggleClass('is-active');
 		}

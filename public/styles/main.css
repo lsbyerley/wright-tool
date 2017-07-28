@@ -6029,7 +6029,7 @@ h1, h2, h3, h4, h5, h6 {
       text-transform: uppercase;
       font-family: 'Titillium Web', Lato, sans-serif;
       font-weight: 600; }
-      #footer .upper .columns .column.right .foot-link:hover {
+      #footer .upper .columns .column.right .foot-link:hover, #footer .upper .columns .column.right .foot-link.is-active {
         color: #00bbff; }
       #footer .upper .columns .column.right .foot-link .icon {
         color: #00bbff; }
@@ -6075,9 +6075,6 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
-
-.columns.solutions .card {
-  box-shadow: none; }
 
 .columns.solutions .media {
   -webkit-box-align: center;
