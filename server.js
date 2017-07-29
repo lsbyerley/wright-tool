@@ -1,6 +1,6 @@
 // app-server.js
 var express = require('express');
-var hogan = require('hogan-express');
+var handlebars = require('express-handlebars');
 var http_module = require('http');
 var bodyParser = require('body-parser');
 var compression = require('compression');
@@ -8,7 +8,13 @@ var env = (process.env.NODE_ENV === 'development') ? 'development' : 'production
 var config;
 
 var app = express();
-app.engine('html', hogan);
+app.engine('.hbs', handlebars.create({
+	layoutsDir: 'views/layouts',
+	partialsDir: 'views/partials',
+	defaultLayout: 'default',
+	//helpers: new require('./templates/views/helpers')(),
+	extname: '.hbs',
+}).engine)
 app.use(bodyParser.json());
 app.use(compression());
 app.use(express.static(__dirname + '/public'));
@@ -40,10 +46,10 @@ app.use(function (req, res, next) {
 	});
 
 	// Global hogan-express variables
-	res.locals.year = new Date().getFullYear();
-	res.locals.is_dev = (env === 'development');
-	res.locals.navLinks = config.navLinks;
-	res.locals.pageMeta = config.pageMeta;
+	app.locals.year = new Date().getFullYear();
+	app.locals.is_dev = (env === 'development');
+	app.locals.navLinks = config.navLinks;
+	app.locals.pageMeta = config.pageMeta;
 
 	next();
 });

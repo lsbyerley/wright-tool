@@ -1,0 +1,57 @@
+<header id="header">
+
+	<div class="top-info">
+		<div class="container">
+			<div class="level">
+				<div class="level-left">
+					<p class="level-item">
+						<span class="icon">
+						  <i class="fa fa-phone"></i>
+						</span>
+						(423) 538-5133
+					</p>
+					<p class="level-item">
+						<span class="icon">
+						  <i class="fa fa-clock-o"></i>
+						</span>
+						Mon - Fri: 9:00 - 5:00
+					</p>
+				</div>
+				<div class="level-right">
+					<p class="level-item">
+						<span class="icon">
+						  <i class="fa fa-envelope"></i>
+						</span>
+						info@wrighttoolinc.com
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="navbar-wrap">
+		<div class="container">
+			<nav class="navbar is-transparent">
+				<div class="navbar-brand">
+					<a class="navbar-item" href="/">
+						<img class="logo" src="images/wrighttool-footer-logo.png" alt="Wright Tool Inc."/>
+					</a>
+					<div class="navbar-burger" data-target="navMenu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<div id="navMenu" class="navbar-menu">
+					<div class="navbar-start"></div>
+					<div class="navbar-end">
+						{{# navLinks }}
+				    		<a href="{{ link }}" class="navbar-item {{ active }}">{{ title }}</a>
+				    	{{/ navLinks }}
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+
+</header>
