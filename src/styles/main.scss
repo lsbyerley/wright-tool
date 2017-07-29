@@ -47,6 +47,19 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
+.hero {
+
+    .title,
+    .subtitle {
+        color: #fff;
+        text-shadow: 1px 2px 1px #000;
+    }
+
+    .title {
+        text-transform: uppercase;
+    }
+}
+
 // PARTIALS
 @import './partials/header';
 @import './partials/footer';

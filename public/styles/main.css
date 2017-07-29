@@ -5946,10 +5946,21 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   text-transform: uppercase; }
 
+.hero .title,
+.hero .subtitle {
+  color: #fff;
+  text-shadow: 1px 2px 1px #000; }
+
+.hero .title {
+  text-transform: uppercase; }
+
 .top-info {
   background: #0e0e0e;
   color: #fff;
   font-size: 12px; }
+  @media screen and (max-width: 768px) {
+    .top-info {
+      display: none; } }
   .top-info .level {
     padding: 10px 0; }
     .top-info .level .level-item .icon {
@@ -6038,16 +6049,20 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     padding: 1rem; }
 
-.hero.landing .title,
-.hero.landing .subtitle {
-  color: #fff;
-  text-shadow: 1px 2px 1px #000; }
-
 .hero.landing {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("/images/wright-tool-home-hero.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%; }
+  .hero.landing .title {
+    font-size: 3rem; }
+  .hero.landing .subtitle {
+    font-size: 2rem; }
+  @media screen and (max-width: 768px) {
+    .hero.landing .title {
+      font-size: 2rem; }
+    .hero.landing .subtitle {
+      font-size: 1.25rem; } }
 
 .hero.parts {
   background-attachment: fixed;
@@ -6055,11 +6070,6 @@ h1, h2, h3, h4, h5, h6 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
-  .hero.parts .title,
-  .hero.parts .subtitle {
-    color: #fff;
-    text-shadow: 1px 2px 1px #000;
-    text-transform: uppercase; }
 
 .columns.solutions-intro .column {
   display: -webkit-box;
@@ -6076,41 +6086,28 @@ h1, h2, h3, h4, h5, h6 {
       -ms-flex-pack: center;
           justify-content: center; }
 
-.columns.solutions .media {
+.columns.solutions .card:hover {
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }
+
+.columns.solutions .card .media {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin: 0; }
-  .columns.solutions .media .media-content p {
+  .columns.solutions .card .media .media-content p {
     color: #343434;
     font-size: 1.25rem; }
-  .columns.solutions .media .media-left {
+  .columns.solutions .card .media .media-left {
     background-color: #ccf1ff;
     border-radius: 50%;
     padding: 5px; }
-    .columns.solutions .media .media-left .icon {
+    .columns.solutions .card .media .media-left .icon {
       background-color: #00bbff;
       padding: 3rem;
       border-radius: 50%; }
-      .columns.solutions .media .media-left .icon .fa {
+      .columns.solutions .card .media .media-left .icon .fa {
         color: #fff;
         font-size: 2rem; }
-
-.section.capabilities {
-  background-color: #a7a7a7; }
-  .section.capabilities .column .image::before {
-    position: absolute;
-    bottom: 0;
-    content: '';
-    background: #ffffff;
-    width: 100%;
-    top: 50%;
-    left: 0;
-    right: 0;
-    z-index: -1; }
-  .section.capabilities .column .image .img {
-    border-radius: 50%;
-    width: 40%; }
 
 .hero.partnerships {
   background-image: -webkit-radial-gradient(center top, ellipse cover, #474747 0%, #0e0e0e 100%); }
@@ -6123,8 +6120,73 @@ h1, h2, h3, h4, h5, h6 {
     .hero.partnerships .subtitle strong {
       color: #fff; }
 
+#google-container {
+  background-color: #e7eaf0;
+  height: 300px;
+  position: relative;
+  width: 100%; }
+  @media only screen and (min-width: 768px) {
+    #google-container {
+      height: 400px; } }
+  @media only screen and (min-width: 1192px) {
+    #google-container {
+      height: 500px; } }
+
+#cd-google-map {
+  padding: 0;
+  position: relative; }
+  #cd-google-map address {
+    background-color: #0e0e0e;
+    color: #fff;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: bold;
+    padding: 1rem 1rem;
+    position: relative;
+    text-align: center;
+    width: 100%; }
+    #cd-google-map address a {
+      color: #fff;
+      border-bottom: 1px solid #00bbff; }
+      #cd-google-map address a:hover {
+        color: #00bbff; }
+
+#cd-zoom-in,
+#cd-zoom-out {
+  background-color: #0e0e0e;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 32px;
+  margin-left: 10px; }
+  #cd-zoom-in .icon,
+  #cd-zoom-out .icon {
+    color: #fff;
+    height: 32px;
+    width: 32px; }
+    #cd-zoom-in .icon .fa,
+    #cd-zoom-out .icon .fa {
+      font-size: 14px; }
+  @media only screen and (min-width: 768px) {
+    #cd-zoom-in,
+    #cd-zoom-out {
+      margin-left: 50px; } }
+
+#cd-zoom-in {
+  margin-bottom: 3px;
+  margin-top: 10px; }
+  @media only screen and (min-width: 768px) {
+    #cd-zoom-in {
+      margin-top: 50px; } }
+
 #about.section {
   background: #f7f8fc; }
+
+.about-list li {
+  line-height: 2rem;
+  padding-bottom: 1rem; }
+  .about-list li .fa-li {
+    vertical-align: middle;
+    line-height: 2rem; }
 
 .hero.service-oriented {
   background-attachment: fixed;
@@ -6154,65 +6216,15 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
     position: relative;
     cursor: default;
-    box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1);
     text-align: center;
     padding: 3rem 0; }
 
-#google-container {
-  background-color: #e7eaf0;
-  height: 300px;
-  position: relative;
-  width: 100%; }
-  @media only screen and (min-width: 768px) {
-    #google-container {
-      height: 400px; } }
-  @media only screen and (min-width: 1192px) {
-    #google-container {
-      height: 500px; } }
-
-#cd-google-map {
-  padding: 0;
-  position: relative; }
-  #cd-google-map address {
-    background-color: #0e0e0e;
-    color: #fff;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: bold;
-    padding: 1rem 1rem;
-    position: relative;
-    text-align: center;
-    width: 100%; }
-
-#cd-zoom-in,
-#cd-zoom-out {
-  background-color: #0e0e0e;
-  border-radius: 3px;
-  cursor: pointer;
-  height: 32px;
-  margin-left: 10px; }
-  #cd-zoom-in .icon,
-  #cd-zoom-out .icon {
-    color: #fff;
-    height: 32px;
-    width: 32px; }
-    #cd-zoom-in .icon .fa,
-    #cd-zoom-out .icon .fa {
-      font-size: 14px; }
-  @media only screen and (min-width: 768px) {
-    #cd-zoom-in,
-    #cd-zoom-out {
-      margin-left: 50px; } }
-
-#cd-zoom-in {
-  margin-bottom: 3px;
-  margin-top: 10px; }
-  @media only screen and (min-width: 768px) {
-    #cd-zoom-in {
-      margin-top: 50px; } }
-
 #equipment.section {
   background: #f7f8fc; }
+  #equipment.section .column {
+    -ms-flex-item-align: start;
+        align-self: flex-start; }
   #equipment.section .tab {
     position: relative;
     margin-bottom: 1px;

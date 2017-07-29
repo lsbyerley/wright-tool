@@ -1,7 +1,21 @@
 @import '../../node_modules/bourbon/app/assets/stylesheets/bourbon';
+@import '../partials/googleMap';
 
 #about.section {
     background: #f7f8fc;
+}
+
+.about-list {
+
+    li {
+        line-height: 2rem;
+        padding-bottom: 1rem;
+
+        .fa-li {
+            vertical-align: middle;
+            line-height: 2rem;
+        }
+    }
 }
 
 .hero.service-oriented {
@@ -42,98 +56,11 @@
             border-radius: 50%;
             position: relative;
             cursor: default;
-            box-shadow: inset 0 0 0 16px rgba(255,255,255,0.6), 0 1px 2px rgba(0,0,0,0.1);
+            box-shadow: inset 0 0 0 5px rgba(255,255,255,0.6), 0 1px 2px rgba(0,0,0,0.1);
             text-align: center;
             padding: 3rem 0;
         }
 
     }
 
-}
-
-// rem fallback - credits: http://zerosixthree.se/
-@function calculate-rem($size) {
-  $rem-size: $size / 16px;
-  @return $rem-size * 1rem;
-}
-
-// layout - breakpoints
-$small: 320px;
-$medium: 768px;
-$large: 1192px;
-
-// layout - media queries
-@mixin media-query($canvas) {
-    @if $canvas == small {
-        @media only screen and (min-width: $small) { @content; }
-    } @else if $canvas == medium {
-        @media only screen and (min-width: $medium) { @content; }
-    } @else if $canvas == large {
-        @media only screen and (min-width: $large) { @content; }
-    }
-}
-
-// Main components
-#google-container {
-    background-color: #e7eaf0;
-    height: 300px;
-    position: relative;
-    width: 100%;
-
-    @include media-query(medium) {
-    	height: 400px;
-    }
-
-    @include media-query(large) {
-    	height: 500px;
-    }
-}
-
-#cd-google-map {
-    padding: 0;
-	position: relative;
-
-	address {
-        background-color: $black;
-        color: #fff;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: bold;
-        padding: 1rem 1rem;
-        position: relative;
-        text-align: center;
-        width: 100%;
-	}
-}
-
-#cd-zoom-in,
-#cd-zoom-out {
-    background-color: rgba($primary, 1);
-    border-radius: 3px;
-    cursor: pointer;
-	height: 32px;
-    margin-left: 10px;
-
-    .icon {
-        color: #fff;
-        height: 32px;
-        width: 32px;
-
-        .fa {
-            font-size: 14px;
-        }
-    }
-
-	@include media-query(medium) {
-		margin-left: 50px;
-	}
-}
-
-#cd-zoom-in {
-    margin-bottom: 3px;
-	margin-top: 10px;
-
-	@include media-query(medium) {
-		margin-top: 50px;
-	}
 }

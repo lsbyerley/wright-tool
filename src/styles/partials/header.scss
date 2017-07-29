@@ -4,6 +4,10 @@
     color: #fff;
     font-size: 12px;
 
+    @include mobile {
+        display: none;
+    }
+
     .level {
         padding: 10px 0;
 

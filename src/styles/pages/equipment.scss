@@ -1,6 +1,10 @@
 #equipment.section {
     background: #f7f8fc;
 
+    .column {
+        align-self:flex-start;
+    }
+
     .tab {
         position: relative;
         margin-bottom: 1px;
