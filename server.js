@@ -1,4 +1,3 @@
-// app-server.js
 var express = require('express');
 var handlebars = require('express-handlebars');
 var http_module = require('http');

@@ -80,7 +80,7 @@ gulp.task('dev-server', function() {
     });
 
     //watch the views
-    gulp.watch('views/**/*.html', function(file) {
+    gulp.watch('views/**/*.hbs', function(file) {
     	console.log(file)
     	server.notify.apply(server, [file]);
     });
