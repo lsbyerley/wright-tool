@@ -13,17 +13,14 @@ app.engine('.hbs', handlebars.create({
 	partialsDir: 'views/partials',
 	defaultLayout: 'default',
 	//helpers: new require('./templates/views/helpers')(),
-	extname: '.hbs',
+	extname: '.hbs'
 }).engine)
+app.set('view engine', '.hbs');
 app.use(bodyParser.json());
 app.use(compression());
 app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('port', process.env.PORT || 8080);
-app.set('partials', {
-	header: 'partials/header',
-	footer: 'partials/footer'
-});
 
 app.use(function (req, res, next) {
 
