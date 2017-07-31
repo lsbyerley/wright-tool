@@ -71,7 +71,7 @@ var loadScript = require('./util/loadScript.js');
 	Barba.Pjax.start();
 	Barba.Dispatcher.on('linkClicked', function(HTMLElement, MouseEvent) {
 		var link = $(HTMLElement);
-		if (link.hasClass('navbar-item') || link.hasClass('foot-link')) {
+		if ((link.hasClass('navbar-item') || link.hasClass('foot-link')) && link[0].pathname !== '/') {
 			$('.navbar-item').removeClass('is-active');
 			$('.foot-link').removeClass('is-active');
 			$('.navbar-item').each(function() {

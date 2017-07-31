@@ -6,7 +6,7 @@
     background-size: 100% 100%;
 
     .title {
-        font-size: 3rem;
+        font-size: 6rem;
     }
     .subtitle {
         font-size: 2rem;
@@ -28,6 +28,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
 }
 
 .columns.solutions-intro {
@@ -41,9 +45,11 @@
 .columns.solutions {
 
     .card {
-        &:hover {
-            box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
-        }
+        background-color: transparent;
+        box-shadow: none;
+        //&:hover {
+        //    box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+        //}
         .media {
             align-items: center;
             margin: 0;

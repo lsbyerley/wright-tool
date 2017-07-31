@@ -40,9 +40,9 @@
 
 	function buildNavLinks(path) {
 		return [
-			{ title: 'About Us', link: '/about', active: (path === '/about') ? 'is-active': '' },
+			{ title: 'Facilities', link: '/facilities', active: (path === '/facilities') ? 'is-active' : '' },
 			{ title: 'Equipment', link: '/equipment', active: (path === '/equipment') ? 'is-active' : '' },
-			{ title: 'Facilities', link: '/facilities', active: (path === '/facilities') ? 'is-active' : '' }
+			{ title: 'About', link: '/about', active: (path === '/about') ? 'is-active': '' }
 		];
 	}
 

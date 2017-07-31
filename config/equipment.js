@@ -88,17 +88,6 @@ var equipment = [
     ]
   },
   {
-    title: 'Miscellaneous',
-    icon: 'fa-star',
-    attrs: [
-      '(2) Air Compressors',
-      '(1) Trinco Bead Blaster, 48″ x 48″',
-      '(1) Dayton Rotary Barrel Tumbler',
-      '(1) Cross Flow Paint Booth, 26’9″ L x 14’3″ W x 9’1/2″ H',
-      '(1) Vibratory Tumbler'
-    ]
-  },
-  {
     title: 'Quality Inspection Equipment',
     icon: 'fa-search',
     attrs: [
@@ -147,7 +136,18 @@ var equipment = [
       '(2) MIG Wire Feed Welder',
       '(1) Miller Dynasty 700 Tig Welder'
     ]
-  }
+    },
+    {
+      title: 'Miscellaneous',
+      icon: 'fa-star',
+      attrs: [
+        '(2) Air Compressors',
+        '(1) Trinco Bead Blaster, 48″ x 48″',
+        '(1) Dayton Rotary Barrel Tumbler',
+        '(1) Cross Flow Paint Booth, 26’9″ L x 14’3″ W x 9’1/2″ H',
+        '(1) Vibratory Tumbler'
+      ]
+    }
 ]
 
 module.exports = equipment
