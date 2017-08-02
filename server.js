@@ -31,13 +31,18 @@ app.use(function (req, res, next) {
 	//res.set('Cache-Control','no-cache,no-store,max-age=0,must-revalidate');
 	//res.set('Pragma','no-cache');
 	//res.set('Expires','-1');
+
+	var contentSecurityPolicy = (process.env.NODE_ENV === 'development') ?
+		"script-src 'self' http://localhost:35729 https://maps.googleapis.com" :
+		"script-src 'self' https://maps.googleapis.com";
+
 	res.set({
 		'Access-Control-Allow-Origin': '*',
 		'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
 		//'Strict-Transport-Security','max-age=31536000; includeSubDomains; preload', //taking out for now, https not ready
 		'X-XSS-Protection': '1; mode=block',
 		'X-Frame-Options': 'SAMEORIGIN',
-		'Content-Security-Policy': "script-src 'self' http://localhost:35729 maps.googleapis.com", // for livereload, although could just take out for development
+		'Content-Security-Policy': contentSecurityPolicy, // for livereload, although could just take out for development
 		'X-Content-Type-Options': 'nosniff'
 	});
 

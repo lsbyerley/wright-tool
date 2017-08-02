@@ -44,6 +44,10 @@
                     }
                 }
 
+                .phone a {
+                    color: #fff;
+                }
+
                 .address::before {
                     content: '\f041'; //fa-map-marker
                     top: 10px;

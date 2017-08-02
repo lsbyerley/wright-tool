@@ -84,8 +84,8 @@ var loadScript = require('./util/loadScript.js');
 					$(this).addClass('is-active');
 				}
 			})
-			$('.navbar .navbar-burger').toggleClass('is-active');
-			$('.navbar .navbar-menu').toggleClass('is-active');
+			$('.navbar .navbar-burger').removeClass('is-active');
+			$('.navbar .navbar-menu').removeClass('is-active');
 		}
 	});
 	Barba.Dispatcher.on('newPageReady', function(currentStatus, prevStatus, HTMLElementContainer, newPageRawHTML) {
