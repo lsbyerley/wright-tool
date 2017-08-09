@@ -21,7 +21,7 @@
     {{> header }}
 
     <div id="barba-wrapper">
-    	<div class="barba-container" data-namespace="{{ pageMeta.namespace }}">
+    	<div class="barba-container" data-namespace="{{ namespace }}">
 
             {{{ body }}}
 
@@ -30,6 +30,8 @@
 
     {{> footer }}
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenLite.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/CSSPlugin.min.js"></script>
     {{#if is_dev }}
         <script src="scripts/main.js"></script>
         <script src="http://localhost:35729/livereload.js"></script>

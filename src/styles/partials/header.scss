@@ -35,13 +35,16 @@
         }
 
         .navbar-burger {
-            &:hover {
-                background-color: transparent;
-            }
-            &.is-active span {
-                background-color: #4a4a4a;
-            }
-        }
+    		span {
+    			background-color: #bdbdbd;
+    		}
+    		&:hover {
+    			background-color: transparent;
+    		}
+    		&.is-active span {
+    			background-color: #bdbdbd;
+    		}
+    	}
 
         .navbar-item {
             font-family: 'Titillium Web', Lato, sans-serif;

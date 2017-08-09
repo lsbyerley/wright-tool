@@ -10,7 +10,7 @@ module.exports = function(app) {
 	});
 
 	app.get('/equipment', function(req, res) {
-		var equipment = require('./config/equipment');
+		var equipment = require('../config/equipment');
 		app.locals.equipment = equipment;
 		res.render('pages/equipment');
 	});

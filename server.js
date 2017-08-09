@@ -11,7 +11,7 @@ app.engine('.hbs', handlebars.create({
 	layoutsDir: 'views/layouts',
 	partialsDir: 'views/partials',
 	defaultLayout: 'default',
-	//helpers: new require('./templates/views/helpers')(),
+	helpers: new require('./server/hbsHelpers')(),
 	extname: '.hbs'
 }).engine)
 app.set('view engine', '.hbs');
@@ -33,8 +33,8 @@ app.use(function (req, res, next) {
 	//res.set('Expires','-1');
 
 	var contentSecurityPolicy = (process.env.NODE_ENV === 'development') ?
-		"script-src 'self' http://localhost:35729 https://maps.googleapis.com" :
-		"script-src 'self' https://maps.googleapis.com";
+		"script-src 'self' http://localhost:35729 https://maps.googleapis.com https://cdnjs.cloudflare.com" :
+		"script-src 'self' https://maps.googleapis.com https://cdnjs.cloudflare.com";
 
 	res.set({
 		'Access-Control-Allow-Origin': '*',
@@ -47,16 +47,20 @@ app.use(function (req, res, next) {
 	});
 
 	// Global hogan-express variables
+	var namespace = (req.path === '/') ? 'home' : req.path;
+	namespace = namespace.replace('/', '');
+	app.locals.namespace = namespace;
 	app.locals.year = new Date().getFullYear();
 	app.locals.is_dev = (env === 'development');
 	app.locals.navLinks = config.navLinks;
+	app.locals.reqPath = req.path;
 	app.locals.pageMeta = config.pageMeta;
 
 	next();
 });
 
 // App Routes
-require('./routes.js')(app);
+require('./server/routes.js')(app);
 
 var http = http_module.Server(app)
 http.listen(app.get('port'), function() {

@@ -71,22 +71,25 @@ var loadScript = require('./util/loadScript.js');
 	Barba.Pjax.start();
 	Barba.Dispatcher.on('linkClicked', function(HTMLElement, MouseEvent) {
 		var link = $(HTMLElement);
-		if ((link.hasClass('navbar-item') || link.hasClass('foot-link')) && link[0].pathname !== '/') {
+		if ((link.hasClass('navbar-item') || link.hasClass('foot-link'))) {
 			$('.navbar-item').removeClass('is-active');
 			$('.foot-link').removeClass('is-active');
 			$('.navbar-item').each(function() {
-				if ( $(this)[0].pathname === link[0].pathname) {
+				if ( $(this)[0].pathname === link[0].pathname && link[0].pathname !== '/') {
 					$(this).addClass('is-active');
 				}
 			})
 			$('.foot-link').each(function() {
-				if ( $(this)[0].pathname === link[0].pathname) {
+				if ( $(this)[0].pathname === link[0].pathname && link[0].pathname !== '/') {
 					$(this).addClass('is-active');
 				}
 			})
 			$('.navbar .navbar-burger').removeClass('is-active');
 			$('.navbar .navbar-menu').removeClass('is-active');
 		}
+	});
+	Barba.Dispatcher.on('initStateChange', function(currentStatus) {
+
 	});
 	Barba.Dispatcher.on('newPageReady', function(currentStatus, prevStatus, HTMLElementContainer, newPageRawHTML) {
 		// For Google Analytics tracking, make sure ga() exists first.
@@ -98,5 +101,40 @@ var loadScript = require('./util/loadScript.js');
 			ga('send', 'pageview');
 		}
 	});
+
+	var FadeTransition = Barba.BaseTransition.extend({
+	    start: function() {
+	        // As soon the loading is finished and the old page is faded out, let's fade the new page
+	        Promise
+	            .all([this.newContainerLoading, this.fadeOut()])
+	            .then(this.fadeIn.bind(this));
+	    },
+
+	    fadeOut: function() {
+	        //oldContainer is the old page that is fading out of the DOM
+	         var oldContainer = $(this.oldContainer);
+	         return
+	            TweenLite.to(oldContainer, .75, { opacity: 0 } )
+	            .promise();
+	    },
+
+	    fadeIn: function() {
+			// At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
+	        var _this = this;
+			var oldContainer = $(this.oldContainer);
+			var newContainer = $(this.newContainer);
+
+			oldContainer.css( { display: 'none' } );
+			TweenLite.fromTo(newContainer,  0.75, { y:10, opacity:0 }, { y:0, opacity:1 });
+
+	        _this.done(); //Do not forget to call .done() as soon your transition is finished!
+	    }
+	});
+
+	// Tell Barba to use the new Transition
+	Barba.Pjax.getTransition = function() {
+	   // can use different transitions for different pages
+	    return FadeTransition;
+	};
 
 })(window, document, window.cash);

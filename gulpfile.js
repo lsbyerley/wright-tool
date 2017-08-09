@@ -74,8 +74,8 @@ gulp.task('dev-server', function() {
 	var server = gls('server.js', {env: {NODE_ENV: 'development'}});
 	server.start();
 
-	//watch the server, routes, and config file for changes
-	gulp.watch(['server.js', 'routes.js', './config/**/*.js'], function() {
+    //watch the server, routes, and config file for changes
+    gulp.watch(['server.js', './server/routes.js', './config/config.js'], function() {
       server.start.bind(server)()
     });
 

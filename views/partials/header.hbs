@@ -46,7 +46,7 @@
 					<div class="navbar-start"></div>
 					<div class="navbar-end">
 						{{# navLinks }}
-				    		<a href="{{ link }}" class="navbar-item {{ active }}">{{ title }}</a>
+							<a href="{{ link }}" class="navbar-item {{#isNavItemActive ../reqPath link}}{{/isNavItemActive}}">{{ title }}</a>
 				    	{{/ navLinks }}
 					</div>
 				</div>
