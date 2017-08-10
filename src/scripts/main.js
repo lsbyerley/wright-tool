@@ -105,6 +105,10 @@ var loadScript = require('./util/loadScript.js');
 			$('.navbar .navbar-burger').removeClass('is-active');
 			$('.navbar .navbar-menu').removeClass('is-active');
 		}
+		if ( link.hasClass('foot-link') && link[0].pathname === '/' ) {
+			$('.navbar-item').removeClass('is-active');
+			$('.foot-link').removeClass('is-active');
+		}
 	});
 	Barba.Dispatcher.on('initStateChange', function(currentStatus) {
 
