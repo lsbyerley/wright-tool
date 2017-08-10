@@ -1,6 +1,6 @@
-@import url(//fonts.googleapis.com/css?family=Lato:300,400);
-@import url(//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700);
-@import url(//fonts.googleapis.com/css?family=Titillium+Web:300,600);
+@import url(//fonts.googleapis.com/css?family=Titillium+Web:600);
+@import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
 
 //BULMA CSS FRAMEWORK
 @import '../../node_modules/bulma/sass/utilities/initial-variables';
@@ -13,8 +13,8 @@ $blue: #00bbff;
 
 $primary: $black;
 
-$family-primary: Lato, serif;
-$family-secondary: Roboto, serif;
+$family-primary: 'Open Sans', sans-serif;
+$family-secondary: 'Montserrat', sans-serif;
 
 $navbar-height: 90px;
 $navbar-item: #fff;
@@ -33,7 +33,7 @@ $title-weight: 400 !default;
 //@import '../../node_modules/bulma/sass/layout/all';
 
 body {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: $family-secondary;

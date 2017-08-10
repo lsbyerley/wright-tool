@@ -14,6 +14,7 @@
 
         .label {
             position: relative;
+            font-family: $family-secondary;
             display: block;
             color: #fff;
             padding: 1rem;
@@ -45,8 +46,7 @@
             max-height: 0;
             overflow: hidden;
             background: lighten($blue, 40%);
-            -webkit-transition: max-height .35s;
-            transition: max-height .35s;
+            //transition: max-height .35s;
 
             .inner-wrap {
                 padding: 1.25rem;
@@ -67,7 +67,7 @@
         }
 
         .label.is-active ~ .tab-content {
-            max-height: 1000px;
+            //max-height: 1000px;
         }
 
         .label.is-active::after {

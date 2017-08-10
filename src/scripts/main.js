@@ -37,7 +37,25 @@ var loadScript = require('./util/loadScript.js');
 		if ($equipmentTabs.length > 0) {
 			$equipmentTabs.forEach(function($el) {
 				$el.addEventListener('click', function() {
-					$el.classList.toggle('is-active');
+
+					var $label = $(this),
+						$tabContent = $label.next();
+
+					if ($label.hasClass('is-active')) {
+						TweenLite.to($tabContent, 0.75, {
+							maxHeight: 0,
+				            ease: Power4.easeOut
+				        });
+						$label.removeClass('is-active');
+					} else {
+						var maxHeight = $tabContent[0].scrollHeight;
+						TweenLite.to($tabContent, 1, {
+				            maxHeight: maxHeight,
+				            ease: Power4.easeOut
+				        });
+						$label.addClass('is-active');
+					}
+
 				})
 			})
 		}
@@ -120,6 +138,10 @@ var loadScript = require('./util/loadScript.js');
 
 	    fadeIn: function() {
 			// At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
+			var scrollTopTween = TweenLite.to(window, .5, {scrollTo:0});
+
+			//console.log(scrollTopTween.progress());
+
 	        var _this = this;
 			var oldContainer = $(this.oldContainer);
 			var newContainer = $(this.newContainer);

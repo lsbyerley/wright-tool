@@ -112,7 +112,7 @@ gulp.task('prod-server', function() {
 gulp.task('build-dev', function(callback) {
 	runSequence(
 		'styles',
-		'lint-styles',
+		//'lint-styles',
 		'scripts',
 		'dev-server',
 		callback

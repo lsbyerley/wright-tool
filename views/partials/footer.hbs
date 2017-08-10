@@ -18,7 +18,7 @@
                     <ul class="foot-links">
                         {{# navLinks }}
                             <li>
-                                <a href="{{ link }}" class="foot-link">
+                                <a href="{{ link }}" class="foot-link {{#isNavItemActive ../reqPath link}}{{/isNavItemActive}}">
                                     <span class="icon">
                                         <i class="fa fa-angle-right"></i>
                                     </span>

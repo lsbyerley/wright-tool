@@ -61,35 +61,3 @@ $large: 1192px;
         }
 	}
 }
-
-#cd-zoom-in,
-#cd-zoom-out {
-    background-color: rgba($primary, 1);
-    border-radius: 3px;
-    cursor: pointer;
-	height: 32px;
-    margin-left: 10px;
-
-    .icon {
-        color: #fff;
-        height: 32px;
-        width: 32px;
-
-        .fa {
-            font-size: 14px;
-        }
-    }
-
-	@include media-query(medium) {
-		margin-left: 50px;
-	}
-}
-
-#cd-zoom-in {
-    margin-bottom: 3px;
-	margin-top: 10px;
-
-	@include media-query(medium) {
-		margin-top: 50px;
-	}
-}

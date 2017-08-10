@@ -1,8 +1,22 @@
-@import '../../node_modules/bourbon/app/assets/stylesheets/bourbon';
 @import '../partials/googleMap';
 
 #about.section {
     background: #f7f8fc;
+}
+
+.hero.policy-goals {
+    background-image: -webkit-radial-gradient(center top, ellipse cover, #474747 0%, #0e0e0e 100%);
+
+    .title {
+        color: #fff;
+    }
+
+    .subtitle {
+        color: #fff;
+        strong {
+            color: #fff;
+        }
+    }
 }
 
 .about-list {
