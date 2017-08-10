@@ -2,6 +2,10 @@ window.cash = require('cash-dom');
 //window.jQuery = require('jquery');
 var Barba = require('barba.js');
 
+require('gsap').TweenLite;
+require('gsap/CSSPlugin');
+require('gsap/ScrollToPlugin');
+
 var aboutPageMap = require('./googleMap.js');
 var loadScript = require('./util/loadScript.js');
 
@@ -124,6 +128,7 @@ var loadScript = require('./util/loadScript.js');
 		}
 	});
 
+	// CUSTOM FADE IN/OUT TRANSITION USING GSAP
 	var FadeTransition = Barba.BaseTransition.extend({
 	    start: function() {
 	        // As soon the loading is finished and the old page is faded out, let's fade the new page
@@ -142,13 +147,15 @@ var loadScript = require('./util/loadScript.js');
 
 	    fadeIn: function() {
 			// At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
-			var scrollTopTween = TweenLite.to(window, .5, {scrollTo:0});
-
-			//console.log(scrollTopTween.progress());
-
-	        var _this = this;
+			var _this = this;
 			var oldContainer = $(this.oldContainer);
 			var newContainer = $(this.newContainer);
+
+			var scrollTopTween = TweenLite.to(window, .5, {scrollTo:0, onComplete:scrollDone});
+
+			function scrollDone() {
+				//console.log('scrolldone!')
+			}
 
 			oldContainer.css( { display: 'none' } );
 			TweenLite.fromTo(newContainer,  0.75, { y:10, opacity:0 }, { y:0, opacity:1 });

@@ -1,10 +1,10 @@
 
 .top-info {
-    background: $black;
+    background: $wt-black;
     color: #fff;
     font-size: 12px;
 
-    @include mobile {
+    @include mobile() {
         display: none;
     }
 
@@ -21,7 +21,7 @@
 }
 
 .navbar-wrap {
-    background-color: $dark-grey;
+    background-color: $wt-dark-grey;
 
     .navbar {
         background-color: transparent;
@@ -53,7 +53,7 @@
 
             &:hover {
                 background-color: transparent;
-                color: $blue;
+                color: $wt-blue;
             }
             &.is-active {
                 background-color: transparent;

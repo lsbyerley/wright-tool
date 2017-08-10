@@ -5,23 +5,24 @@
 //BULMA CSS FRAMEWORK
 @import '../../node_modules/bulma/sass/utilities/initial-variables';
 
-//SET CUSTOM BULMA VARIABLES AS NEEDED
-$black: #0e0e0e;
-$light-grey: #f7f8fc;
-$dark-grey: #1a1a1a;
-$blue: #00bbff;
+// WRIGHT TOOL CUSTOM VARIABLES
+$wt-black: #0e0e0e;
+$wt-light-grey: #f7f8fc;
+$wt-dark-grey: #1a1a1a;
+$wt-blue: #00bbff;
+$wt-font: 'Open Sans', sans-serif;
+$wt-font-secondary: 'Montserrat', sans-serif;
 
-$primary: $black;
-
-$family-primary: 'Open Sans', sans-serif;
-$family-secondary: 'Montserrat', sans-serif;
-
+// ASSIGN THEM TO BULMA VARIABLES
+$primary: $wt-black;
 $navbar-height: 90px;
-$navbar-item: #fff;
-$navbar-item-active: $blue;
-$navbar-item-hover: $blue;
+//$navbar-background-color: transparent;
+$navbar-item-color: $white;
+$navbar-item-hover-color: $wt-blue;
+//$navbar-item-hover-background-color: transparent;
+$navbar-item-active-color: $wt-blue;
 
-$title-weight: 400 !default;
+$family-sans-serif: $wt-font;
 
 //IMPORT REST OF BULMA
 @import '../../node_modules/bulma/bulma';
@@ -36,11 +37,11 @@ body {
     font-size: 1.15rem;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: $family-secondary;
+    font-family: $wt-font-secondary;
     font-weight: 400;
 }
 .section {
-    background-color: $light-grey;
+    background-color: $wt-light-grey;
 }
 .title {
     font-weight: 400;
@@ -58,6 +59,15 @@ h1, h2, h3, h4, h5, h6 {
 
     .title {
         text-transform: uppercase;
+    }
+
+    @include mobile() {
+        .title {
+            font-size: 1.5rem;
+        }
+        .subtitle {
+            font-size: 1rem;
+        }
     }
 
 }

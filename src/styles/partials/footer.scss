@@ -4,7 +4,7 @@
     font-size: 1rem;
 
     .upper {
-        background: $dark-grey;
+        background: $wt-dark-grey;
         padding: 1rem;
 
         .columns {
@@ -72,10 +72,10 @@
 
                     &:hover,
                     &.is-active {
-                        color: $blue;
+                        color: $wt-blue;
                     }
                     .icon {
-                        color: $blue;
+                        color: $wt-blue;
                     }
                 }
             }
@@ -83,7 +83,7 @@
     }
 
     .lower {
-        background: $black;
+        background: $wt-black;
         color: #fff;
         padding: 1rem;
     }

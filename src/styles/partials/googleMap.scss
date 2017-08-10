@@ -41,7 +41,7 @@ $large: 1192px;
 	position: relative;
 
 	address {
-        background-color: $black;
+        background-color: $wt-black;
         color: #fff;
         font-size: 1rem;
         font-style: normal;
@@ -53,10 +53,10 @@ $large: 1192px;
 
         a {
             color: #fff;
-            border-bottom: 1px solid $blue;
+            border-bottom: 1px solid $wt-blue;
 
             &:hover {
-                color: $blue;
+                color: $wt-blue;
             }
         }
 	}

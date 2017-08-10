@@ -62,12 +62,12 @@
             }
 
             .media-left {
-                background-color: lighten($blue, 40%);
+                background-color: lighten($wt-blue, 40%);
                 border-radius: 50%;
                 padding: 5px;
 
                 .icon {
-                    background-color: $blue;
+                    background-color: $wt-blue;
                     border-radius: 50%;
                     width: 5rem;
                     height: 5rem;

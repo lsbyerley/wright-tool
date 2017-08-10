@@ -2,34 +2,36 @@
 
 #about.section {
     background: #f7f8fc;
+
+    .title {
+        &::before {
+            @include fa(1.5rem, 2rem);
+
+            margin-right: 10px;
+            content: '\f0c0';
+            display: inline-block;
+            font-family: 'FontAwesome';
+        }
+    }
+
+    .about-list {
+
+        li {
+            line-height: 2rem;
+            padding-bottom: 1rem;
+
+            .fa-li {
+                vertical-align: middle;
+                line-height: 2rem;
+            }
+        }
+    }
 }
 
 .hero.policy-goals {
     background-image: -webkit-radial-gradient(center top, ellipse cover, #474747 0%, #0e0e0e 100%);
 
-    .title {
-        color: #fff;
-    }
 
-    .subtitle {
-        color: #fff;
-        strong {
-            color: #fff;
-        }
-    }
-}
-
-.about-list {
-
-    li {
-        line-height: 2rem;
-        padding-bottom: 1rem;
-
-        .fa-li {
-            vertical-align: middle;
-            line-height: 2rem;
-        }
-    }
 }
 
 .hero.service-oriented {

@@ -86,7 +86,7 @@ gulp.task('dev-server', function() {
     });
 
 	//watch the scss files
-    gulp.watch(global.srcPath + 'styles/**/*.scss', ['styles', 'lint-styles']);
+    gulp.watch(global.srcPath + 'styles/**/*.scss', ['styles'/*, 'lint-styles'*/]);
     gulp.watch(global.buildPath + 'styles/main.css', function(file) {
         console.log(file)
     	server.notify.apply(server, [file]);
@@ -100,14 +100,6 @@ gulp.task('dev-server', function() {
     });
 
 });
-
-gulp.task('prod-server', function() {
-
-    // false turns off livereload
-    var server = gls('server.js', {env: {NODE_ENV: 'production'}}, false);
-	server.start();
-
-})
 
 gulp.task('build-dev', function(callback) {
 	runSequence(

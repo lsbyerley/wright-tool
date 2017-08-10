@@ -7,8 +7,12 @@
     height: 60vh;
     text-align: center;
 
-    @include mobile {
+    @include mobile() {
         height: 30vh;
+    }
+
+    @media screen and (max-width: $tablet - 1px) and (orientation:landscape) {
+        height: 50vh;
     }
 
     .hero-body {
@@ -52,6 +56,17 @@
 
 #facilities.section {
     background: #f7f8fc;
+
+    .title.dept {
+        &::before {
+            @include fa(1.5rem, 2rem);
+
+            margin-right: 10px;
+            content: '\f0f7';
+            display: inline-block;
+            font-family: 'FontAwesome';
+        }
+    }
 
     .card.facility {
 

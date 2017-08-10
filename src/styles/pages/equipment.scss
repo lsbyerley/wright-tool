@@ -14,18 +14,18 @@
 
         .label {
             position: relative;
-            font-family: $family-secondary;
+            font-family: $wt-font-secondary;
             display: block;
             color: #fff;
             padding: 1rem;
             text-align: center;
-            background: $black;
+            background: $wt-black;
             font-weight: bold;
             cursor: pointer;
             margin: 0;
 
             .icon {
-                color: $blue;
+                color: $wt-blue;
                 margin-right: 5px;
             }
 
@@ -45,7 +45,7 @@
         .tab-content {
             max-height: 0;
             overflow: hidden;
-            background: lighten($blue, 40%);
+            background: lighten($wt-blue, 40%);
             //transition: max-height .35s;
 
             .inner-wrap {
@@ -56,10 +56,10 @@
 
                 li {
                     border-bottom: 1px dotted #c9c9c9;
-                    color: darken($blue, 30%);
+                    color: darken($wt-blue, 30%);
                     text-align: left;
                     font-size: 1rem;
-                    font-family: $family-secondary;
+                    font-family: $wt-font-secondary;
                     font-weight: 400;
                     line-height: 36px;
                 }
@@ -83,11 +83,11 @@
         .card-header {
             position: relative;
             justify-content: center;
-            background: $black;
+            background: $wt-black;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             box-shadow: none;
-            color: $blue;
+            color: $wt-blue;
 
             &::after {
                 content: '+';
@@ -134,10 +134,10 @@
 
                 li {
                     border-bottom: 1px dotted #c9c9c9;
-                    color: darken($blue, 30%);
+                    color: darken($wt-blue, 30%);
                     text-align: left;
                     font-size: 1rem;
-                    font-family: $family-secondary;
+                    font-family: $wt-font-secondary;
                     font-weight: 400;
                     line-height: 36px;
                 }
