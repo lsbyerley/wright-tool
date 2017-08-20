@@ -30,7 +30,7 @@ gulp.task('styles', function() {
 	.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
 	.pipe(gulp.dest(global.buildPath + 'styles/'))
 	.pipe(rename({ suffix: '.min' }))
-	.pipe(minifycss({safe: true}))
+	.pipe(minifycss({autoprefixer: false}))
 	.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
 	.pipe(gulp.dest(global.buildPath + 'styles/'));
 
