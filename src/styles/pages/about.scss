@@ -30,8 +30,7 @@
 
 .hero.policy-goals {
     background-image: -webkit-radial-gradient(center top, ellipse cover, #474747 0%, #0e0e0e 100%);
-
-
+    background-image: -ms-radial-gradient(center top, ellipse cover, #474747 0%, #0e0e0e 100%);
 }
 
 .hero.service-oriented {
@@ -65,6 +64,7 @@
 
         .circle {
             background-image: -webkit-radial-gradient(center top, ellipse cover, #474747 0%, #0e0e0e 100%);
+            background-image: -ms-radial-gradient(center top, ellipse cover, #474747 0%, #0e0e0e 100%);
             color: #fff;
             font-weight: 600;
             width: 100%;

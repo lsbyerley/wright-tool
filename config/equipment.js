@@ -43,7 +43,8 @@ var equipment = [{
 			'(1) Centerless Grinder up to 1-1/4 Dia.',
 			'(1) OD Grinders, 14″ Dia. x 54″ Long',
 			'(1) ID Grinders up to 3″',
-			'(2) Surface Grinder, 12″ x 24″'
+			'(2) Surface Grinder, 12″ x 24″',
+			'(1) Blanchard Grinder 36 inch chuck'
 		]
 	},
 	{

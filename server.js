@@ -51,6 +51,8 @@ app.use(function (req, res, next) {
 	namespace = namespace.replace('/', '');
 	app.locals.namespace = namespace;
 	app.locals.year = new Date().getFullYear();
+	app.locals.hours = config.hours;
+	app.locals.email = config.email;
 	app.locals.is_dev = (env === 'development');
 	app.locals.navLinks = config.navLinks;
 	app.locals.reqPath = req.path;

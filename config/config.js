@@ -4,18 +4,20 @@
 	function config(path) {
 		return {
 			pageMeta: buildPageMeta(path),
-			navLinks: buildNavLinks(path)
+			navLinks: buildNavLinks(path),
+			hours: 'Mon - Thur: 8:00 - 5:00',
+			email: 'wrighttool@wrighttoolinc.com'
 		};
 	}
 
 	function buildPageMeta(path) {
-		var title = "Wright Tool & Engineering Incorporated",
+		var title = "Wright Tool Incorporated",
 			description = "A service oriented company offering specialty tooling, precision piece work, and custom machine building for a variety of industries";
 
 		switch (path) {
 			case '/about':
 				title = "About Us | " + title;
-				description = "About: Wright Tool has been in operation since 1989 and is located in a 40,000 square foot facility in the Tri-Country Industrial Park in Piney Flats, Tennessee"
+				description = "Wright Tool has been in operation since 1989 and is located in a 40,000 square foot facility in the Tri-Country Industrial Park in Piney Flats, Tennessee"
 				break;
 			case '/equipment':
 				title = "Our Equipment | " + title;

@@ -22,7 +22,7 @@
 
 			var mapOptions = {
 				//center: new google.maps.LatLng(latitude, longitude),
-		        zoom: 17,
+		        zoom: 16,
 		        fullscreenControl: false,
 		        scrollwheel: false,
 		        panControl: false,
@@ -41,7 +41,8 @@
 		    marker = new google.maps.Marker({
 		        position: latLng,
 		        map: map,
-		        draggable: true,
+		        draggable: false,
+				clickable: false,
 		        animation: google.maps.Animation.DROP
 		    });
 
