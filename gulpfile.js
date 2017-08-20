@@ -26,7 +26,7 @@ gulp.task('styles', function() {
     return gulp.src(global.srcPath + 'styles/main.scss')
 	.pipe(sass())
 	.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
-	.pipe(autoprefixer({ browsers: ['ie >= 8', 'last 2 versions', '> 1%'], map: false }))
+	.pipe(autoprefixer({ browsers: ['ie >= 9', 'last 2 versions', '> 0%'], map: false }))
 	.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
 	.pipe(gulp.dest(global.buildPath + 'styles/'))
 	.pipe(rename({ suffix: '.min' }))

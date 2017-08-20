@@ -29,8 +29,8 @@
 }
 
 .hero.policy-goals {
-    background-image: -webkit-radial-gradient(center top, ellipse cover, #474747 0%, #0e0e0e 100%);
-    background-image: -ms-radial-gradient(center top, ellipse cover, #474747 0%, #0e0e0e 100%);
+    background: radial-gradient(top, #474747, #0e0e0e);
+    background: -ms-radial-gradient(top, #474747, #0e0e0e);
 }
 
 .hero.service-oriented {
@@ -63,8 +63,8 @@
     .columns {
 
         .circle {
-            background-image: -webkit-radial-gradient(center top, ellipse cover, #474747 0%, #0e0e0e 100%);
-            background-image: -ms-radial-gradient(center top, ellipse cover, #474747 0%, #0e0e0e 100%);
+            background: radial-gradient(top, #474747, #0e0e0e);
+            background: -ms-radial-gradient(top, #474747, #0e0e0e);
             color: #fff;
             font-weight: 600;
             width: 100%;
