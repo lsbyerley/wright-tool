@@ -22,7 +22,7 @@
 
 			var mapOptions = {
 				//center: new google.maps.LatLng(latitude, longitude),
-		        zoom: 16,
+		        zoom: 17,
 		        fullscreenControl: false,
 		        scrollwheel: false,
 		        panControl: false,
