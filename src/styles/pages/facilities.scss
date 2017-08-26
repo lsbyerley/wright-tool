@@ -6,52 +6,67 @@
     //background-attachment: fixed;
     height: 60vh;
     text-align: center;
-
-    @include mobile() {
-        height: 30vh;
-    }
+    position: relative;
 
     @media screen and (max-width: $tablet - 1px) and (orientation:landscape) {
         height: 50vh;
     }
 
-    .hero-body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .facility-meta {
+      position: absolute;
+      width: auto;
+      background: rgba(0, 0, 0, .5);
+      color: #fff;
+      bottom: 0;
+      right: 0;
+      padding: 1rem;
+      border-top-left-radius: 3px;
 
-        .title {
-            font-size: 5rem;
+      .title {
+          font-size: 2rem;
 
-            small {
-                font-size: 1.5rem;
-                display: inline-block;
-                line-height: 2rem;
-                margin-left: 10px;
-            }
-        }
+          small {
+              font-size: .5rem;
+              display: inline-block;
+              line-height: 1rem;
+              margin-left: 10px;
+          }
+      }
 
-        .subtitle {
-            font-size: 2rem;
-        }
-
-        @include mobile() {
-            .title {
-                font-size: 3rem;
-
-                small {
-                    font-size: .8rem;
-                    line-height: 1rem;
-                }
-            }
-
-            .subtitle {
-                font-size: 1.5rem;
-            }
-        }
+      .subtitle {
+          font-size: 1rem;
+      }
 
     }
 
+    @include mobile() {
+
+      height: 30vh;
+
+      .facility-meta {
+        padding: 5px;
+        border-radius: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      .title {
+          font-size: 1.5rem;
+          margin-bottom: 5px;
+
+          small {
+              font-size: .7rem;
+              line-height: 1rem;
+          }
+      }
+
+      .subtitle {
+          font-size: .8rem;
+      }
+
+    }
 }
 
 #facilities.section {
