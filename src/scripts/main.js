@@ -90,6 +90,7 @@ var loadScript = require('./util/loadScript.js');
 	aboutPage.init();
 	equipmentPage.init();
 
+	Barba.Prefetch.init();
 	Barba.Pjax.start();
 	Barba.Dispatcher.on('linkClicked', function(HTMLElement, MouseEvent) {
 		var link = $(HTMLElement);

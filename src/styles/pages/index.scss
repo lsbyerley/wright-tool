@@ -43,6 +43,10 @@
         .intro-text {
             max-width: 100%;
             box-sizing: border-box;
+
+            @include mobile() {
+                text-align: center;
+            }
         }
     }
 }
