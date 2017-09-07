@@ -65,6 +65,23 @@ var loadScript = require('./util/loadScript.js');
 		}
 	}
 
+	function updateActiveNavItems(currentStatus) {
+		$('.navbar-item').each(function() {
+			if ( $(this)[0].href === currentStatus.url) {
+				$(this).addClass('is-active');
+				//console.log('found!')
+				return;
+			}
+		});
+		$('.foot-link').each(function() {
+			if ( $(this)[0].href === currentStatus.url) {
+				$(this).addClass('is-active');
+				//console.log('found!')
+				return;
+			}
+		});
+	}
+
 	// Barba.js page transitions
 	// Custom about page event for Google Map
 	var aboutPage = Barba.BaseView.extend({
@@ -93,30 +110,14 @@ var loadScript = require('./util/loadScript.js');
 	Barba.Prefetch.init();
 	Barba.Pjax.start();
 	Barba.Dispatcher.on('linkClicked', function(HTMLElement, MouseEvent) {
-		var link = $(HTMLElement);
-		if ((link.hasClass('navbar-item') || link.hasClass('foot-link'))) {
-			$('.navbar-item').removeClass('is-active');
-			$('.foot-link').removeClass('is-active');
-			$('.navbar-item').each(function() {
-				if ( $(this)[0].pathname === link[0].pathname && link[0].pathname !== '/') {
-					$(this).addClass('is-active');
-				}
-			})
-			$('.foot-link').each(function() {
-				if ( $(this)[0].pathname === link[0].pathname && link[0].pathname !== '/') {
-					$(this).addClass('is-active');
-				}
-			})
-			$('.navbar .navbar-burger').removeClass('is-active');
-			$('.navbar .navbar-menu').removeClass('is-active');
-		}
-		if ( link.hasClass('foot-link') && link[0].pathname === '/' ) {
-			$('.navbar-item').removeClass('is-active');
-			$('.foot-link').removeClass('is-active');
-		}
+
 	});
 	Barba.Dispatcher.on('initStateChange', function(currentStatus) {
-
+		$('.navbar-item').removeClass('is-active');
+		$('.navbar .navbar-burger').removeClass('is-active');
+		$('.navbar .navbar-menu').removeClass('is-active');
+		$('.foot-link').removeClass('is-active');
+		updateActiveNavItems(currentStatus);
 	});
 	Barba.Dispatcher.on('newPageReady', function(currentStatus, prevStatus, HTMLElementContainer, newPageRawHTML) {
 		// For Google Analytics tracking, make sure ga() exists first.
