@@ -11,7 +11,7 @@
 	}
 
 	function buildPageMeta(path) {
-		var title = "Wright Tool Incorporated",
+		var title = "Wright Tool Inc.",
 			description = "A service oriented company offering specialty tooling, precision piece work, and custom machine building for a variety of industries";
 
 		switch (path) {

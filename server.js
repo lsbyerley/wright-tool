@@ -4,9 +4,11 @@ var http_module = require('http');
 var bodyParser = require('body-parser');
 var compression = require('compression');
 var env = (process.env.NODE_ENV === 'development') ? 'development' : 'production';
+var helmet = require('helmet');
 var config;
 
 var app = express();
+app.use(helmet());
 app.engine('.hbs', handlebars.create({
 	layoutsDir: 'views/layouts',
 	partialsDir: 'views/partials',
