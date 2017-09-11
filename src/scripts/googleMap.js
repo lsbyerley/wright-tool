@@ -7,8 +7,8 @@
 
 			var map, latLng, marker = new google.maps.Geocoder();
 
-			var latitude = 36.436095,
-			    longitude = -82.297488;
+			var latitude = 36.435888,
+			    longitude = -82.297511;
 
 			var style = [
 			    {	//poi stands for point of interest - don't show these lables on the map
