@@ -7,8 +7,18 @@ var env = (process.env.NODE_ENV === 'development') ? 'development' : 'production
 var helmet = require('helmet');
 var config;
 
+// for all dates
+process.env.TZ = 'America/New_York';
+
 var app = express();
 app.use(helmet());
+app.use(compression());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
+app.set('view engine', '.hbs');
+app.set('views', __dirname + '/views');
+app.set('port', process.env.PORT || 8080);
 app.engine('.hbs', handlebars.create({
 	layoutsDir: 'views/layouts',
 	partialsDir: 'views/partials',
@@ -16,12 +26,6 @@ app.engine('.hbs', handlebars.create({
 	helpers: new require('./server/hbsHelpers')(),
 	extname: '.hbs'
 }).engine)
-app.set('view engine', '.hbs');
-app.use(bodyParser.json());
-app.use(compression());
-app.use(express.static(__dirname + '/public'));
-app.set('views', __dirname + '/views');
-app.set('port', process.env.PORT || 8080);
 
 app.use(function (req, res, next) {
 
@@ -35,8 +39,8 @@ app.use(function (req, res, next) {
 	//res.set('Expires','-1');
 
 	var contentSecurityPolicy = (process.env.NODE_ENV === 'development') ?
-		"script-src 'self' http://localhost:35729 https://maps.googleapis.com https://cdnjs.cloudflare.com" :
-		"script-src 'self' https://maps.googleapis.com https://cdnjs.cloudflare.com";
+	"script-src 'self' http://localhost:35729 maps.googleapis.com cdnjs.cloudflare.com www.google-analytics.com" :
+	"script-src 'self' maps.googleapis.com cdnjs.cloudflare.com www.google-analytics.com";
 
 	res.set({
 		'Access-Control-Allow-Origin': '*',
