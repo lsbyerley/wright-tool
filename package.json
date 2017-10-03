@@ -9,7 +9,7 @@
     "url": "https://github.com/lsbyerley/wright-tool.git"
   },
   "scripts": {
-    "start": "gulp build-prod; node server.js --env production",
+    "start": "gulp build-prod",
     "start-dev": "gulp build-dev"
   },
   "author": "Lucas Byerley",
